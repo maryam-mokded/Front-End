@@ -1,0 +1,69 @@
+.body
+{
+  padding-top: 50px;
+  background: #a1be91;
+  background: linear-gradient(90deg, #a1be91 0%, #a1be91 50%, #a1be91 100%);  padding-bottom: 50px;
+}
+
+.container-contact1{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: white;
+  border-radius: 20px;
+  padding:47px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#ImgSend{
+  height: 433px;
+    width: 377px;
+    margin-left: 59px;
+    margin-top: 33px;
+}
+
+
+
+.contact1-form-title
+{
+  padding-left: 188px;
+  font-size: 41px;
+  font-weight: bold;
+  padding-bottom: 34px;
+}
+
+form
+{
+  padding-top: 68px;
+  padding-left: 25px;
+  padding-right: 33px;
+}
+textarea{
+  margin-bottom: 15px;
+  border-radius: 15px;
+  height: 114px;
+  font-family: comic sans ms;
+  background-color: rgb(202, 199, 199);
+
+}
+input{
+  margin-bottom: 15px;
+  border-radius: 15px;
+  padding: 13px;
+  font-family: comic sans ms;
+  background-color: rgb(202, 199, 199);
+}
+
+#btnSend{
+  border-color:#57b846 ;
+  background-color: #57b846;
+    border-radius: 15px;
+    padding: 15px;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 24px;
+    margin-left: 134px;
+}
