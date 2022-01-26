@@ -1,1 +1,32 @@
 <app-navbar-external></app-navbar-external>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1> - Presentation - </h1>
+
+        <div *ngIf="ShowImgCim">
+          <h3 style="margin-left: 231px;">Les Ciemente de Bizerte</h3>
+          <img id="imgCim" src="assets/01.jpg" alt="Avatar">
+        </div>
+
+      <div *ngIf="ShowDescription">
+        <h2>The components of the SCB</h2>
+
+        <p> 1. <b>The Production Plant</b> is located Baie de Sabra 3km South-West of the city of Bizerte, Bizerte
+        </p><p style="margin-left: 70px;">Sud delegation, on the road to the fishery.</p>
+        <p> 2. <b>The SCB quarries</b> are located 2.5km from the factory in Bir Messiougha and Jebal Bakkar.</p>
+        <p> 3. <b>The City administrative building</b> located Rue Habib Thameur, City of Bizerte.</p>
+        <p> 4. <b>The Tunis office </b>, at the Center Urbain Nord 1082 – Tunis.</p>
+
+      </div>
+
+       <div *ngIf="ShowImgLoc">
+         <h3>Geographic location  in relation to Bizerte</h3>
+          <img id="imgLoc" src="assets/Loc.jpg" alt="Avatar">
+        </div>
+
+    </div>
+  </div>
+</div>
