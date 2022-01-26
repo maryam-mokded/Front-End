@@ -1,1 +1,117 @@
-<app-navbar-external></app-navbar-external>
+<div class="header"></div>
+<app-navbar-external (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'"></app-navbar-external>
+
+<h1 style="text-align: center;">Our News</h1>
+<div id="cardS">
+  <div><img id="imgAct" [src]="SrcImage"></div>
+  <div class="texte_centrer" style="padding: 10px;">{{LienCard}}</div>
+
+</div>
+
+<div class="slider-container">
+  <div class="menu" style="text-align: center;">
+    <label (click)="AfficheImage1()"></label>
+    <label (click)="AfficheImage2()"></label>
+    <label (click)="AfficheImage3()"></label>
+  </div>
+</div>
+
+
+
+<div class="container" >
+
+  <h1 style="margin-bottom: 70px !important;margin-left: 234px !important;">More Details</h1>
+
+  <div class="row">
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png" alt="">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png" alt="">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png" alt="">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png" alt="">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png" alt="">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+      <div>
+        <img src="../../../assets/img-01.png" alt="">
+      </div>
+      <div style="border-top:2px solid gray;">
+        <h3>Hello</h3>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
