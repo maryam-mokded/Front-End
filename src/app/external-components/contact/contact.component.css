@@ -1,8 +1,11 @@
 .body
 {
   padding-top: 50px;
-  background: #a1be91;
-  background: linear-gradient(90deg, #a1be91 0%, #a1be91 50%, #a1be91 100%);  padding-bottom: 50px;
+  /* background: #5479ed;
+  background: linear-gradient(90deg, #5479ed 0%, #43a1f3 50%, #2ed3fb 100%); */
+  background: #5479ed;
+  background: linear-gradient(90deg, #5479ed 0%, #43a1f3 50%, #2ed3fb 100%);
+
 }
 #iconLien{
   background-color: white;
@@ -63,8 +66,9 @@ input{
 }
 
 #btnSend{
-  border-color:#57b846 ;
-  background-color: #57b846;
+  border-color:#5479ed;
+  background: #5479ed;
+  background: linear-gradient(90deg, #5479ed 0%, #43a1f3 50%, #2ed3fb 100%);
     border-radius: 15px;
     padding: 15px;
     color: white;
@@ -75,3 +79,26 @@ input{
     margin: 24px;
     margin-left: 134px;
 }
+
+
+
+img{
+  transform: translateX(-500px);
+  animation: fadeIn 1.5s;
+  animation-fill-mode: forwards
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-500px)
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateX(0px)
+  }
+}
+
+
+

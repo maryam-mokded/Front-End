@@ -37,7 +37,8 @@ h1 {
   margin-top: 62px;
   font-size: 80px;
   font-family: comic sans ms;
-  color: #a1be91;
+  color: #43a1f3;
+  /* color: linear-gradient(90deg, #5479ed 0%,  50%, #2ed3fb 100%); */
   font-weight: bold;
 }
 #cardS {

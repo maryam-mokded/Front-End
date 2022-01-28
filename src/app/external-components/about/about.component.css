@@ -38,6 +38,11 @@ h3{
   margin-right: 200px;
   width: 972px;
 }
+img{
+  box-shadow: 3px 2px #bfb9b9, -1em 0 5.4em grey;
+  border-radius: 23px;
+  border: 3px solid grey;
+}
 
 #imgLoc{
 
@@ -45,4 +50,42 @@ h3{
   width: 829px;
   margin-left: 134px;
 
+}
+
+
+
+
+#imgLoc{
+  transform: translateX(-500px);
+  animation: fadeIn 1.5s;
+  animation-fill-mode: forwards
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-500px)
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateX(0px)
+  }
+}
+
+
+
+#imgCim{
+  animation: moveTop 1.6s ease-in;
+  overflow: hidden
+}
+
+@keyframes moveTop {
+  0% {
+      transform: translateY(400px)
+  }
+
+  100% {
+      transform: translateY(0px)
+  }
 }
