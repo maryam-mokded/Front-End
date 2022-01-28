@@ -1,53 +1,50 @@
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div style=" padding-top: 109px;" class="left-content show-up header-text wow fadeInLeft"
+              data-wow-duration="1s" data-wow-delay="1s">
+              <div class="row" style=" height: 438px; width: 411px;">
+                <div class="col-lg-12">
+                  <h2 class="translateLefet">Sign In</h2>
 
-  <div class="content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img src="assets/loginImage.PNG" alt="Image" class="img-fluid">
-        </div>
-        <div class="col-md-6 contents">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <div class="mb-4">
-              <h1>Sign In</h1>
-              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
-            </div>
-            <form action="#" method="post">
-              <div class="form-group first">
-                <input type="text" class="form-control" id="username" placeholder="Username">
+                  <form action="#" method="post">
+                    <div class="form-group first">
+                      <input type="text" class="form-control translateLefet" id="username" placeholder="Username">
 
+                    </div>
+                    <div class="form-group last mt-2">
+                      <input [type]="mdp" class="form-control translateLefet" id="password" placeholder="Password">
+
+                    </div>
+
+                    <div class="form-check translateLefet" id="checkbox">
+                      <input type="checkbox" (click)="myFunction()" style="margin-right: 7px;">
+                      <label class="form-check-label" for="exampleCheck1">Show Password </label>
+                    </div>
+                    <div id="btnDiv">
+                      <div>
+                        <input type="submit" value="Log In" class="btn btn-primary translateLefet" id="btnLogin">
+                      </div>
+                      <div>
+                        <button routerLink="//home" class="btn btn-secondary translateLefet" id="btnAnnuler">Back</button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
               </div>
-              <div class="form-group last mb-4 mt-2">
-                <input [type]="mdp" class="form-control" id="password" placeholder="Password">
-
-              </div>
-
-              <div class="form-check" id="checkbox">
-                <input type="checkbox" (click)="myFunction()" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Show Password </label>
-              </div>
-
-              <input type="submit" value="Log In" class="btn btn-block" id="btnLogin">
-
-              <button routerLink="//home" class="btn btn-block " id="btnAnnuler">Return to Home Page</button>
-
-              <div class="social-login" id="Links">
-                <a href="#" class="facebook">
-                  <span><i class="fa fa-facebook-f fa-lgs"></i></span>
-                </a>
-                <a href="#" class="twitter">
-                  <span><i class="fa fa-twitter"></i></span>
-                </a>
-                <a href="#" class="google">
-                  <span><i class="fa fa-envelope"></i></span>
-                </a>
-              </div>
-            </form>
             </div>
           </div>
-
+          <div class="col-lg-6">
+            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="../../../assets/user-login-4268415-3551762.webp" style="width: 474px; height: 638px;">
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
+</div>

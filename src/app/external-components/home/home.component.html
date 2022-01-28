@@ -1,15 +1,16 @@
 <div class="header"></div>
 <app-navbar-external (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'"></app-navbar-external>
 
-<h1 style="text-align: center;">Our News</h1>
+<h1>Our News</h1>
 <div id="cardS">
-  <div><img id="imgAct" [src]="SrcImage"></div>
-  <div class="texte_centrer" style="padding: 10px;">{{LienCard}}</div>
-
+  <div><img id="SliderImage" [src]="SrcImage"></div>
+  <div class="texte_centrer" *ngIf="LienCard == 'Image3'">Press release of 28/12/2010</div>
+  <div class="texte_centrer" *ngIf="LienCard == 'Image2'">Preliminary list of candidates (Masters) selected after the oral and psychotechnical <br> examination of the recruitment competition for the year 2019</div>
+  <div class="texte_centrer" *ngIf="LienCard == 'Image1'">Tender notice N°04/2022 “Acquisition of a carbon and sulfur analyzer”</div>
 </div>
 
 <div class="slider-container">
-  <div class="menu" style="text-align: center;">
+  <div class="menu" >
     <label (click)="AfficheImage1()"></label>
     <label (click)="AfficheImage2()"></label>
     <label (click)="AfficheImage3()"></label>
@@ -18,96 +19,114 @@
 
 
 
-<div class="container" >
+<div class="container" id="Container">
 
-  <h1 style="margin-bottom: 70px !important;margin-left: 234px !important;">More Details</h1>
+  <h1>More Details</h1>
 
   <div class="row">
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+    <div id="CardDetails" class="col-lg">
       <div>
-        <img src="../../../assets/img-01.png">
+        <img src="../../../assets/ImageAccueil/offer1.jpg" id="ImgOffer1">
       </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
+      <div>
+        <h3>Avis d’appel d’offre N°04/2022 « Acquisition d’un analyseur de carbone et soufre»</h3>
+        <p>26 janvier 2022</p>
+        <h4>Date limite de réception des offres: 03/03/2022 à 09H:30 Date d’ouverture des offres : 03/03/2022 à 14h:30</h4>
       </div>
     </div>
 
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+    <div id="CardDetails" class="col-lg Espacement">
       <div>
-        <img src="../../../assets/img-01.png" alt="">
+        <img src="../../../assets/ImageAccueil/resultat1.jpg" id="ImgResultat1">
       </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
+      <div>
+        <h3>Liste préliminaire des candidats (Cadres) retenus après l’examen oral et psychotechnique du concours de recrutement 2019 pour les postes B, G et E</h3>
+        <p>17 janvier 2022</p>
+        <h4>إعلان النتائج الأولية الخاصة بالمراكز B, G و E إثر الاختبار الشفاهي و النفسي بعنوان سنة 2019 أ. القائمة الأولية للناجحين في الإختبار الشفاهي و النفسي حسب المركز المركز: مراقبة … <span style="color: green;"> READ MORE</span></h4>
       </div>
     </div>
 
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+    <div id="CardDetails" class="col-lg">
       <div>
-        <img src="../../../assets/img-01.png" alt="">
+        <img src="../../../assets/ImageAccueil/offer2.jpg" id="ImgOffer2">
       </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
+      <div>
+        <h3>Avis d’appel d’offre N°02/2022 « Entretien général des ateliers de production »</h3>
+        <p>26 janvier 2022</p>
+        <h4>Date limite de réception des offres: 22/02/2022 à 09H:30 Date d’ouverture des offres : 22/02/2022 à 14h:30</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="EspacementRow">
+    <div id="CardDetails" class="col-lg">
+      <div>
+        <img src="../../../assets/ImageAccueil/resultat2.jpg" id="ImgResultat2">
+      </div>
+      <div>
+        <h3>Liste préliminaire des candidats (Maîtrise) retenus après l’examen oral et psychotechnique du concours de recrutement au titre de l’année 2019</h3>
+        <p>4 janvier 2022</p>
+        <h4>إعلانالنتائج الأولية للمناظرة الخاصة بإنتداب أعوان تسيير إثر الاختبار الشفاهي و النفسي بعنوان سنة 2019 أ. القائمة الأولية للناجحين في الإختبار الشفاهي و النفسي حسب المركز المركز:الإدارة المالية و المحاسبة …<span style="color: green;"> READ MORE</span></h4>
+      </div>
+    </div>
+
+    <div id="CardDetails" class="col-lg Espacement">
+      <div>
+        <img src="../../../assets/ImageAccueil/offer3.jpg" id="ImgOffer3">
+      </div>
+      <div>
+        <h3>2ème avis de report de l’appel d’offre N° 35/2021: « Souscription des contrats d’assurances»</h3>
+        <p>26 janvier 2022</p>
+        <h4>Date limite de réception des offres: 17/02/2022 à 09H:30 Date d’ouverture des offres : 17/02/2022 à 14h:30</h4>
+      </div>
+    </div>
+
+    <div id="CardDetails" class="col-lg">
+      <div>
+        <img src="../../../assets/ImageAccueil/resultat3.png" id="ImgResultat3">
+      </div>
+      <div>
+        <h3>Communiqué environnemental concernant les émissions atmosphériques accidentelles</h3>
+        <p>31 décembre 2021</p>
+        <h4>La société des Ciments de Bizerte tient toujours, dans sa politique, de considérer le respect de l’environnement comme priorité incontournable. Dans ce cadre, le projet d’installation du filtre à manche … <span style="color: green;">READ MORE</span></h4>
       </div>
     </div>
 
   </div>
 
-  <div class="row">
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+
+  <div class="row" >
+    <div id="CardDetails" class="col-lg">
       <div>
-        <img src="../../../assets/img-01.png">
+        <img src="../../../assets/ImageAccueil/offer4.jpg" id="ImgOffer4">
       </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
+      <div>
+        <h3>Avis d’appel d’offre N°01/2022 « CHOIX D’UN 1er COMMISSAIRE AUX COMPTES POUR LA PERIODE 2022-2023-2024»</h3>
+        <p>7 janvier 2022</p>
+        <h4>Date limite de réception des offres: 10/02/2022 à 17H:00</h4>
       </div>
     </div>
 
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+    <div id="CardDetails" class="col-lg Espacement">
       <div>
-        <img src="../../../assets/img-01.png" alt="">
+        <img src="../../../assets/ImageAccueil/resultat4.jpg" id="ImgResultat4">
       </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
+      <div>
+        <h3>Liste préliminaire des candidats retenus pour le passage de l’examen oral et psychotechnique du concours de recrutement Cadres 2019 pour les postes B, G et E à refaire</h3>
+        <p>25 novembre 2021</p>
+        <h4>
+          إعلان النتائج الأولية لإعادة المناظرة الخاصة بالمراكز B, G و E أ. القائمة الأولية للمدعوين لاجتياز الإختبار الشفاهي والنفسي حسب المركز والترتيب مراقبة التصرف –B- رقم     ب ت و اللقب …<span style="color: green;"> READ MORE</span></h4>
       </div>
     </div>
 
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
+    <div id="CardDetails" class="col-lg">
       <div>
-        <img src="../../../assets/img-01.png" alt="">
+        <img src="../../../assets/ImageAccueil/offer5.jpg" id="ImgOffer5">
       </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
       <div>
-        <img src="../../../assets/img-01.png">
-      </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
-      </div>
-    </div>
-
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
-      <div>
-        <img src="../../../assets/img-01.png" alt="">
-      </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
-      </div>
-    </div>
-
-    <div style="border: 2px solid gray; position: unset;margin :20px" class="col-md-3">
-      <div>
-        <img src="../../../assets/img-01.png" alt="">
-      </div>
-      <div style="border-top:2px solid gray;">
-        <h3>Hello</h3>
+         <h3>Avis de concours de recrutement au titre des années 2020-2021</h3>
+        <p >19 décembre 2021</p>
+        <h4>إعلان عن فتح مناظرة بعنوان سنتي  2020-2021 : للإطلاع على نص البلاغ إعلان عن فتح مناظرة بعنوان سنتي 2020-2021 لقد تم غلق المناظرة مع انتهاء الآجال بتاريخ 24 جانفي 2022</h4>
       </div>
     </div>
 
