@@ -7,8 +7,12 @@
   margin-top: 10px;
   padding-left: 10px;
 }
+.diviserList{
+  padding-bottom: 10px;
+}
+
 .diviserList:hover{
-  background-color:#e0f3d6 ;
+  background-color:#a8eafb ;
 }
 .body {
   font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -197,7 +201,7 @@ a {
             padding: 9px 20px;
             display: block; }
             .site-navbar .site-navigation .site-menu .has-children .dropdown > li > a:hover {
-              background: #ebeef0;
+              background: #7fbae2;
               color: #212529; }
           .site-navbar .site-navigation .site-menu .has-children .dropdown > li.has-children > a:before {
             content: "\e315";

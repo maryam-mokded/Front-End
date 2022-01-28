@@ -29,12 +29,33 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/admin-lte/plugins/fontawesome-free/css/all.css",
+              "node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.css",
+              "node_modules/admin-lte/dist/css/adminlte.css",
+              "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
+              "node_modules/admin-lte/plugins/datatables-bs4/css/dataTables.bootstrap4.css",
+              "node_modules/admin-lte/dist/css/adminlte.min.css"
             ],
             "scripts": [
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/postcss-loader/dist/cjs.js"
+              "./node_modules/postcss-loader/dist/cjs.js",
+              "node_modules/admin-lte/plugins/jquery/jquery.js",
+              "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.js",
+              "node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js",
+              "node_modules/admin-lte/dist/js/adminlte.js",
+              "node_modules/admin-lte/dist/js/demo.js",
+              "node_modules/admin-lte/plugins/jquery-mousewheel/jquery.mousewheel.js",
+              "node_modules/admin-lte/plugins/raphael/raphael.js",
+              "node_modules/admin-lte/plugins/jquery-mapael/jquery.mapael.js",
+              "node_modules/admin-lte/plugins/chart.js/Chart.js",
+              "node_modules/admin-lte/dist/js/pages/dashboard2.js",
+              "node_modules/admin-lte/plugins/jquery/jquery.min.js",
+              "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "node_modules/admin-lte/plugins/datatables/jquery.dataTables.js",
+              "node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.js",
+              "node_modules/admin-lte/dist/js/adminlte.min.js"
             ]
           },
           "configurations": {

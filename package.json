@@ -26,7 +26,6 @@
     "@swimlane/ngx-charts": "^19.2.0",
     "admin-lte": "^3.1.0",
     "echarts": "^5.2.2",
-    "mat-timepicker": "^5.1.4",
     "ngx-bootstrap": "^7.1.0",
     "ngx-toastr": "^14.2.1",
     "rxjs": "~6.6.0",

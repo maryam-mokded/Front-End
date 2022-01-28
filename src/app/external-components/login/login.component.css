@@ -1,3 +1,10 @@
+#input{
+  font-family: comic sans ms;
+  width: 340px;
+  height: 40.5px;
+  font-size: 18px;
+  border-radius: 15px;
+}
 
 img{
   width: 250px;
@@ -94,12 +101,16 @@ form{
   padding-right: 20px;
   padding-left: 20px;
   color: wheat;
+  font-size: 18px;
   width: 100px;
+  border-radius: 10px;
 }
 #btnAnnuler{
   padding-right: 20px;
   color: white;
   width: 100px;
+  border-radius: 10px;
+  font-size: 18px;
 }
 
 #btnDiv{

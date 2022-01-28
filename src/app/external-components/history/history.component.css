@@ -1,4 +1,10 @@
- .main-timeline{ font-family: 'Heebo', sans-serif; }
+p{
+  font-size: 16px !important;
+}
+
+
+
+.main-timeline{ font-family: 'Heebo', sans-serif; }
 .main-timeline:after{
     content: '';
     display: block;
