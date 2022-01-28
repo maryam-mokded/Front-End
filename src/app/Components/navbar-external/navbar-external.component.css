@@ -18,8 +18,9 @@
 }
 
 #navBar{
-  background-color: #a1be91;
-}
+  background: #5479ed;
+  background: linear-gradient(90deg, #5479ed 0%, #43a1f3 50%, #2ed3fb 100%);
+  }
 .LogoTitre{
   margin-left: 106px;
   color: white;

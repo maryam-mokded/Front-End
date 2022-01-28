@@ -14,7 +14,7 @@ img{
 
 .main-banner:after {
   content: '';
-  background-image: url(../../../assets/backgroundLogin-removebg-preview.png);
+  background-image: url(../../../assets/BackgroundLoginPage.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
