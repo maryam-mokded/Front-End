@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InternalComponentsComponent } from './internal-components.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,10 @@ const routes: Routes = [
       },
       {
         path: '', redirectTo: 'profile', pathMatch: 'full'
-      }
+      },
+      {
+        path:'**', component: NotFoundComponent
+      },
     ]
   }
 ];
