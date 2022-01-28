@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { HistoryComponent } from './history/history.component';
 import { TeamComponent } from './team/team.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,10 @@ const routes: Routes = [
       },
       {
         path: '', redirectTo: 'home', pathMatch: 'full'
-      }
+      },
+      {
+        path:'**', component: NotFoundComponent
+      },
     ]
   }
 ];

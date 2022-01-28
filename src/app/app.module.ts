@@ -15,6 +15,7 @@ import { AboutComponent } from '../app/external-components/about/about.component
 import { ContactComponent } from '../app/external-components/contact/contact.component';
 import { LoginComponent } from '../app/external-components/login/login.component';
 import { NavbarExternalComponent } from './Components/navbar-external/navbar-external.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NavbarExternalComponent } from './Components/navbar-external/navbar-ext
     LoginComponent,
     HistoryComponent,
     TeamComponent,
-    NavbarExternalComponent
+    NavbarExternalComponent,
+    NotFoundComponent
 
   ],
   imports: [
