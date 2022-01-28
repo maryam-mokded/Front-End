@@ -15,9 +15,9 @@ const routes: Routes = [
       {
         path: '', redirectTo: 'profile', pathMatch: 'full'
       },
-      {
-        path:'**', component: NotFoundComponent
-      },
+      // {
+      //   path:'**', component: NotFoundComponent
+      // },
     ]
   }
 ];

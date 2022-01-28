@@ -5,11 +5,16 @@ import { InternalComponentsRoutingModule } from './internal-components-routing.m
 import { InternalComponentsComponent } from './internal-components.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { NavbarInternalComponent } from '../Components/navbar-internal/navbar-internal.component';
+import { SidebarInternalComponent } from '../Components/sidebar-internal/sidebar-internal.component';
+
 
 @NgModule({
   declarations: [
     InternalComponentsComponent,
-    ProfileComponent
+    ProfileComponent,
+    NavbarInternalComponent,
+    SidebarInternalComponent
   ],
   imports: [
     CommonModule,
