@@ -1,7 +1,100 @@
 <div class="main-content" style="background-color: #f3f5f9">
-  <div class="container" style="padding-left : 35px !important;padding-top: 30px;padding-right: 30px !important;">
+  <div class="container" style="padding-left : 35px !important;padding-top: 0px;padding-right: 30px !important;">
     <div class="row">
-      <h1>MailBox Template</h1>
+      <main class="content">
+        <div class="container p-0">
+
+          <h1 class="h3 mb-3" style="font-size: 40px;padding-left: 35px;font-weight: bold;font-family: comic sans ms;margin-top: 24px;background-color: #007bff;padding-top: 25px;padding-bottom: 59px;color: white;">
+            Your Mailbox</h1>
+
+          <div class="card">
+            <div class="row g-0">
+
+              <!-- All Mail -->
+              <div class="col-12 col-lg-5 col-xl-3 border-right scroller" style="padding-top: 24px;">
+                <div class="px-4 d-none d-md-block">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                      <h2 style="font-weight: bold;color: #007bff;font-family: comic sans ms;font-size: 24px;">Other mail</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dropdown-divider" style="margin: 10px;"></div>
+
+                <a *ngFor="let mail of mails" (click)="AfficherDetailsMail(mail)"  class="list-group-item list-group-item-action border-0" style="margin-left: 6px;margin-bottom: 5px;">
+                  <div class="badge bg-success float-right" style="font-size: 10px;">{{mail.date | date :'shortTime'}}</div>
+                  <div class="d-flex align-items-start">
+                    <img src="../../../assets/mail.png" class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40">
+                    <div class="flex-grow-1 ml-3">
+                      <span style="font-size: 17px;color:rgb(40 167 69);margin-bottom: 3px;font-weight: bold;">{{mail.user?.nom}} {{mail.user?.prenom | slice:0:1}}...</span>
+                      <div class="small" style="padding-left: 5px;font-size: 13px;color: gray;">{{mail.message | slice:0:18}}...</div>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+
+              <!-- Details Mail -->
+                <div class="col-12 col-lg-7 col-xl-9" style="width: 755px;" *ngIf="mailChecked">
+                  <div class="py-2 px-4 border-bottom d-none d-lg-block">
+                    <div  class="d-flex align-items-center py-1">
+                      <div class="flex-grow-1 pl-3" >
+                        <strong style="font-size: 20px;color: #cd2939;font-family: comic sans ms;">
+                          {{mailChecked.user?.nom}}
+                          {{mailChecked.user?.prenom}}
+                        </strong>
+                      </div>
+                      <div >
+                        <button class="btn btn-danger btn-lg mr-1 px-3"> <i class="fa fa-trash" width="30" height="30" style="font-size: 20px;background-color: #cd2939;"></i></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div>
+
+                    <div style="margin-left: 60px;margin-top: 20px; margin-bottom: 30px;">
+                      <h1 style="font-family: comic sans ms;font-weight: 800;color: #007bff;">Information</h1>
+
+                      <div style="margin-bottom: 10px;">
+                        <span style="padding-left: 19px;font-family: comic sans ms; font-size: 18px;color: #28a745;">User Name :</span>
+                        <span style="margin-left: 17px;font-size: 15px;color: gray; font-family: comic sans ms;">
+                          {{mailChecked.user?.nom}}
+                          {{mailChecked.user?.prenom}}
+                        </span><br>
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <span style="padding-left: 19px;font-family: comic sans ms; font-size: 18px;color: #28a745;">Email :</span>
+                        <span style="margin-left: 17px;font-size: 15px;color: gray; font-family: comic sans ms;">{{mailChecked.user?.email}}</span><br>
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <span style="padding-left: 19px;font-family: comic sans ms; font-size: 18px;color: #28a745;">Date :</span>
+                        <span style="margin-left: 17px;font-size: 15px;color: gray; font-family: comic sans ms;">{{mailChecked.date | date :'longDate'}}</span><br>
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <span style="padding-left: 19px;font-family: comic sans ms; font-size: 18px;color: #28a745;">Time :</span>
+                        <span style="margin-left: 17px;font-size: 15px;color: gray; font-family: comic sans ms;">{{mailChecked.date | date :'shortTime'}}</span><br>
+                      </div>
+                    </div>
+
+                      <div class="dropdown-divider" style="margin: 10px;"></div>
+                      <div style="margin: 15px">
+                        <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+                          <div class="font-weight-bold mb-1" style="font-family: comic sans ms;font-weight: 800;color: #007bff;font-size: 24px;">Message</div>
+                          <p style="    font-size: 18px;">{{mailChecked.message}}</p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   </div>
 </div>
