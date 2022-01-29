@@ -21389,3 +21389,18 @@ html[dir="rtl"]
   font-size: 52px;
   padding-top: 11px;
 }
+
+
+#divChart{
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+#myChart{
+  display: block;
+  width: 988px;
+  height: 459px;
+  padding-left: 75px;
+  padding-right: 75px;
+}
