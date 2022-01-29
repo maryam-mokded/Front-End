@@ -22,7 +22,7 @@ export class MailBoxComponent implements OnInit {
 
     this.users = [
       {"id_user":1,"nom":"Ben Taleb","prenom":"Ahmed","email":"BenTalebAhmed@gamil.com"},
-      {"id_user":2,"nom":"Mejberi","prenom":"Hannibal","email":"HannibalMejebri@gamil.com"},
+      {"id_user":2,"nom":"Melki","prenom":"Manar","email":"HannibalMejebri@gamil.com"},
       {"id_user":3,"nom":"Malouli","prenom":"Mohamed","email":"MohamedMallouli@gamil.com"},
       {"id_user":4,"nom":"Melki","prenom":"Amira","email":"MelkiAmira@gamil.com"},
       {"id_user":5,"nom":"Mokded","prenom":"Maryam","email":"mokded.maryam28@gamil.com"},
