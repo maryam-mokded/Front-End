@@ -7,6 +7,8 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { NavbarInternalComponent } from '../Components/navbar-internal/navbar-internal.component';
 import { SidebarInternalComponent } from '../Components/sidebar-internal/sidebar-internal.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MailBoxComponent } from './mail-box/mail-box.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { SidebarInternalComponent } from '../Components/sidebar-internal/sidebar
     InternalComponentsComponent,
     ProfileComponent,
     NavbarInternalComponent,
-    SidebarInternalComponent
+    SidebarInternalComponent,
+    DashboardComponent,
+    MailBoxComponent
   ],
   imports: [
     CommonModule,
