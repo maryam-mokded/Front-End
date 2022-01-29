@@ -630,13 +630,31 @@ body{margin-top:20px;
     border-top: 1px solid #FFF;
   }
 
-  input{
+  input {
     font-size: 18px;
     height: 44.5px;
     font-family: comic sans ms;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border-bottom-color: rgb(199, 197, 197) !important; */
+    border-bottom: 2px solid;
   }
+
+  p{
+    font-size: 18px;
+    height: 44.5px;
+    font-family: comic sans ms;
+    }
+
   label{
     font-weight: 500 !important;
     font-family: comic sans ms;
     font-size: 18px;
   }
+
+  #label {
+    padding-top: 11px;
+  }
+
+
