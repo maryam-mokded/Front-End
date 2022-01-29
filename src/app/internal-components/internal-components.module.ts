@@ -9,6 +9,7 @@ import { NavbarInternalComponent } from '../Components/navbar-internal/navbar-in
 import { SidebarInternalComponent } from '../Components/sidebar-internal/sidebar-internal.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MailBoxComponent } from './mail-box/mail-box.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MailBoxComponent } from './mail-box/mail-box.component';
     NavbarInternalComponent,
     SidebarInternalComponent,
     DashboardComponent,
-    MailBoxComponent
+    MailBoxComponent,
+    CalendarComponent
   ],
   imports: [
     CommonModule,
