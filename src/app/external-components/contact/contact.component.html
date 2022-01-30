@@ -1,49 +1,70 @@
 <app-navbar-external></app-navbar-external>
 <div class="body">
-	<div class="contact1">
-		<div class="container-contact1">
-			<div class="contact1-pic js-tilt" data-tilt>
-				<img src="../../../assets/message.png" alt="IMG" id="ImgSend">
-			</div>
-    <div>
-      <span class="contact1-form-title">
-        Contact us
-      </span>
-			<form >
-				<div>
-					<input class="form-control" type="text" name="name" placeholder="Name">
-					<span class="shadow-input1"></span>
-				</div>
+  <div class="contact1">
+    <div class="container-contact1">
+      <div class="contact1-pic js-tilt" data-tilt>
+        <img src="../../../assets/message.png" alt="IMG" id="ImgSend">
+      </div>
+      <div>
+        <span class="contact1-form-title">
+          Contact us
+        </span>
+        <form [formGroup]="myForm" class="needs-validation" novalidate>
+          <div>
+            <input class="form-control" type="text" [(ngModel)]="mail.nom" name="nom" formControlName="nom"
+              placeholder="Name">
+            <div *ngIf="nom?.invalid && nom?.touched" class="text-danger" id="validate">
+              Name is not validate (minimum 2 caratères).
+            </div>
+            <div *ngIf="nom?.valid && nom?.touched" class="text-success" id="validate">
+              Name is Validated!
+            </div>
+            <span class="shadow-input1"></span>
 
-				<div>
-					<input class="form-control" type="text" name="email" placeholder="Email">
-				</div>
+          </div>
 
-				<div>
-					<textarea class="form-control" name="message" placeholder="Message"></textarea>
-				</div>
+          <div>
+            <input class="form-control" type="text" formControlName="email" [(ngModel)]="mail.email" name="email"
+              placeholder="Email">
+            <div *ngIf="email?.invalid && email?.touched" class="text-danger" id="validate">
+              Email is not validate !            </div>
+            <div *ngIf="email?.valid && email?.touched" class="text-success" id="validate">
+              Email validated.
+            </div>
+          </div>
 
-				<div class="container-contact1-form-btn">
-					<button id="btnSend">
-						<span>
-							Send Message &nbsp;&nbsp;
-							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
-			</form>
+          <div>
+            <textarea class="form-control" name="message" formControlName="message" placeholder="Message"
+              [(ngModel)]="mail.message"></textarea>
+            <div *ngIf="message?.invalid && message?.touched" class="text-danger" id="validate">
+              Message is not validate (minimum 2 caratères) !            </div>
+            <div *ngIf="message?.valid && message?.touched" class="text-success" id="validate">
+              message validated.
+            </div>
+          </div>
+
+          <div class="container-contact1-form-btn">
+            <button (click)="SendMail()" id="btnSend" [disabled]="myForm.invalid">
+              <span>
+                Send Message &nbsp;&nbsp;
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-		</div>
-	</div>
+  </div>
 
-  <div class="row" >
+  <div class="row">
     <div class="col-md-3">
       <div class="dbox w-100 text-center">
         <div class="icon d-flex align-items-center justify-content-center">
           <span class="fa fa-map-marker" id="iconLien"></span>
         </div>
         <div class="text">
-          <p><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</span> Avenu Habib Thameur , <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7018 - Bizerte (Tunis)</p>
+          <p><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</span> Avenu
+            Habib Thameur , <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7018 - Bizerte (Tunis)</p>
         </div>
       </div>
     </div>

@@ -8,23 +8,27 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     MatMenuModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

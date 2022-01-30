@@ -109,3 +109,17 @@ img{
 
 
 
+#validate{
+  font-family: comic sans ms;
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 31px;
+  padding-bottom: 8px;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border:2px solid #ff0000;
+ }
+ .form-control.ng-touched.ng-valid {
+  border:2px solid rgb(9, 211, 9);
+ }

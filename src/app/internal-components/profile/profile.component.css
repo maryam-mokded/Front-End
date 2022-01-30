@@ -648,9 +648,10 @@ body{margin-top:20px;
     }
 
   label{
-    font-weight: 500 !important;
+    font-weight: bold !important;
     font-family: comic sans ms;
-    font-size: 18px;
+    font-size: 20px;
+    color: #007bff;
   }
 
   #label {
