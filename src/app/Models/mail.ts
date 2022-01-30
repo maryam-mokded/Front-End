@@ -1,8 +1,7 @@
-import { User } from "./user";
-
 export class Mail{
-  id_mail?: number;
-  message?: string;
-  date?: Date;
-  user?: User;
+  id_Contact!: number;
+  message!: string;
+  date!: Date;
+  nom!:string;
+  email!:string;
 }

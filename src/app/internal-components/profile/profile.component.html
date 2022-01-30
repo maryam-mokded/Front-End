@@ -134,164 +134,165 @@
           </div>
           <div class="col-md-8">
 
-            <div class="tab-block">
-              <div class="tab-content p30" style="width: 688px; margin-bottom: 26px;">
-                <div id="tab1" class="tab-pane active">
-                  <!-- Information-User Terminer-->
+            <div class="panel">
+              <div class="panel-heading">
+                <span class="panel-icon">
+                  <i class="fas fa-info-circle" style="font-size: 18px;"></i>
+                </span>
+                <span class="panel-title" style="font-weight: bold;font-size: 20px;">{{EtatProfil}}</span>
+              </div>
+              <div class="panel-body pb5" style="padding-left: 53px; padding-right: 2px;padding-top: 27px; ">
+                <div *ngIf="test == true ; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
 
-                    <div class="card-header card-header-danger" id="backgroundColor">
-                      <h4 class="card-title" id="textColor" style="font-size: 25px;font-family: comic sans ms;font-weight: bold;">{{EtatProfil}}</h4>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">First Name</label>
                     </div>
-                    <div class="card-body border-gradient border-gradient-purple on-light">
-
-                      <div *ngIf="test == true ; then thenBlock else elseBlock"></div>
-                      <ng-template #thenBlock>
-
-                        <div class="form-row">
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Nom</label>
-                          </div>
-                          <div class="form-group col-md-7">
-                             <p style="font-size: 20px;"> Mokded </p>
-                          </div>
-                        </div>
-
-                        <div class="form-row">
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Prenom</label>
-                          </div>
-                          <div class="form-group col-md-7">
-                             <p style="font-size: 20px;"> Maryam </p>
-                          </div>
-                        </div>
-
-                        <div class="form-row">
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Num CIN</label>
-                          </div>
-                          <div class="form-group col-md-7">
-                             <p style="font-size: 20px;"> 11427586 </p>
-                          </div>
-                        </div>
-
-                        <div class="form-row">
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Num Tel</label>
-                          </div>
-                          <div class="form-group col-md-7">
-                             <p style="font-size: 20px;">(+216) 53 740 917 </p>
-                          </div>
-                        </div>
-
-                        <div class="form-row">
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Email</label>
-                          </div>
-                          <div class="form-group col-md-7">
-                             <p style="font-size: 20px;"> MokdedMaryam@gmail.com </p>
-                          </div>
-                        </div>
-
-                        <div class="form-row">
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Adress</label>
-                          </div>
-                          <div class="form-group col-md-7">
-                             <p style="font-size: 20px;"> Bizerte </p>
-                          </div>
-                        </div>
-
-                        <div class="form-row">
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Date d'embauche</label>
-                          </div>
-                          <div class="form-group col-md-7">
-                             <p style="font-size: 20px;"> 02 Nov 2021 </p>
-                          </div>
-                        </div>
-
-                        <button (click)="modifierProfil()" class="btn btn-primary btn-round "  style="margin-left: 451px;margin-top: 20px;font-size: 17px;">
-                          <i class="fas fa-pen fa-lg"></i>
-                          Modifier
-                        </button>
-
-                      </ng-template>
-                      <ng-template #elseBlock>
-                        <form  class="needs-validation" novalidate>
-
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label id="label" for="inputEmail4">Nom</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" placeholder="Nom" value="Mokded" name="prenom">
-                            </div>
-                          </div>
-
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label id="label" for="inputEmail4">Prenom</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" placeholder="Prenom" value="Maryam" name="prenom">
-                            </div>
-                          </div>
-
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label id="label" for="inputEmail4">Num Cin</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" placeholder="11427586" value="11427586" name="prenom">
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label id="label" for="inputEmail4">Num Tel</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" placeholder="(+216) 53 740 917" value="(+216) 53 740 917" name="prenom">
-                            </div>
-                          </div>
-
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label id="label" for="inputEmail4">Email</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" placeholder="example@example.com" value="MokdedMaryam@gmail.com" name="prenom">
-                            </div>
-                          </div>
-
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label id="label" for="inputEmail4">Adress</label>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" placeholder="Adress" value="Bizerte" name="prenom">
-                            </div>
-                          </div>
-
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label id="label" for="inputEmail4">Date d'embauche </label>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" placeholder="JJ/MM/YYYY" value="02 Nov 2021" name="prenom" readonly>
-                            </div>
-                          </div>
-
-                           <button type="submit"  (click)="modifierProfil()"
-                            class="btn btn-success btn-round" style="margin-left: 458px;  font-size: 18px;margin-top: 19px;">
-                            <i class="fas fa-save fa-lg"></i>
-                            Enregistrer
-                          </button>
-                        </form>
-                      </ng-template>
+                    <div class="form-group col-md-7">
+                       <p style="font-size: 20px;"> Mokded </p>
                     </div>
                   </div>
-                </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">Last Name</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                       <p style="font-size: 20px;"> Maryam </p>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">CIN</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                       <p style="font-size: 20px;"> 11427586 </p>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">Tel</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                       <p style="font-size: 20px;">(+216) 53 740 917 </p>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">Email</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                       <p style="font-size: 20px;"> MokdedMaryam@gmail.com </p>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">Adress</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                       <p style="font-size: 20px;"> Bizerte </p>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">Date d'embauche</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                       <p style="font-size: 20px;"> 02 Nov 2021 </p>
+                    </div>
+                  </div>
+
+                  <button (click)="modifierProfil()" class="btn btn-primary btn-round "  style="margin-left: 451px;margin-top: 20px;font-size: 17px;">
+                    <i class="fas fa-pen fa-lg"></i>
+                    Modifier
+                  </button>
+
+                </ng-template>
+                <ng-template #elseBlock>
+                  <form  class="needs-validation" novalidate>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label id="label" for="inputEmail4">Nom</label>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Nom" value="Mokded" name="prenom">
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label id="label" for="inputEmail4">Prenom</label>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Prenom" value="Maryam" name="prenom">
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label id="label" for="inputEmail4">Num Cin</label>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="11427586" value="11427586" name="prenom">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label id="label" for="inputEmail4">Num Tel</label>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="(+216) 53 740 917" value="(+216) 53 740 917" name="prenom">
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label id="label" for="inputEmail4">Email</label>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="example@example.com" value="MokdedMaryam@gmail.com" name="prenom">
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label id="label" for="inputEmail4">Adress</label>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Adress" value="Bizerte" name="prenom">
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label id="label" for="inputEmail4">Date d'embauche </label>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="JJ/MM/YYYY" value="02 Nov 2021" name="prenom" readonly>
+                      </div>
+                    </div>
+
+                     <button type="submit"  (click)="modifierProfil()"
+                      class="btn btn-success btn-round" style="margin-left: 458px;  font-size: 18px;margin-top: 19px;">
+                      <i class="fas fa-save fa-lg"></i>
+                      Enregistrer
+                    </button>
+                  </form>
+                </ng-template>
+
+
+
               </div>
+            </div>
+
+
             </div>
         </div>
       </section>

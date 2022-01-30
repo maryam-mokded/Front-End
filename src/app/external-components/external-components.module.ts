@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ExternalComponentsRoutingModule } from './external-components-routing.module';
 import { ExternalComponentsComponent } from './external-components.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -35,6 +37,8 @@ import { NavbarExternalComponent } from '../Components/navbar-external/navbar-ex
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class ExternalComponentsModule { }
