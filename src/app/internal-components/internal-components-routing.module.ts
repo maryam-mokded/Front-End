@@ -5,7 +5,7 @@ import { InternalComponentsComponent } from './internal-components.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MailBoxComponent } from './mail-box/mail-box.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { EmployeesListComponent } from './employees-list/employees-list.component';
 
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
         path: 'mail-box', component: MailBoxComponent
       },
       {
-        path: 'calendar', component: CalendarComponent
+        path: 'employees-list', component: EmployeesListComponent
       },
       {
         path: '', redirectTo: 'profile', pathMatch: 'full'

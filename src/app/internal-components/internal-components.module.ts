@@ -9,9 +9,16 @@ import { NavbarInternalComponent } from '../Components/navbar-internal/navbar-in
 import { SidebarInternalComponent } from '../Components/sidebar-internal/sidebar-internal.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MailBoxComponent } from './mail-box/mail-box.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { EmployeesListComponent } from './employees-list/employees-list.component';
 
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     InternalComponentsComponent,
@@ -20,10 +27,15 @@ import { CalendarComponent } from './calendar/calendar.component';
     SidebarInternalComponent,
     DashboardComponent,
     MailBoxComponent,
-    CalendarComponent
+    EmployeesListComponent
   ],
   imports: [
     CommonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
     InternalComponentsRoutingModule
   ]
 })

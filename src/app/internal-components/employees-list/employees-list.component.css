@@ -1,0 +1,158 @@
+#card-Table{
+  padding-bottom: 20px;
+  padding-top: 59px;
+  padding-left: 51px;
+  padding-right: 33px;
+}
+th{
+  color: #ea4542;
+  font-size: 20px !important;
+  font-weight: bold;
+  /* text-align: center; */
+  padding-left: 40px !important;
+  padding-bottom: 15px !important;
+  font-family: Comic sans ms;
+}
+
+#Cont{
+  padding-left: 70px !important;
+}
+
+td{
+  padding-top: 15px !important;
+  font-size: 18px;
+  /* text-align: center; */
+  font-family: comic sans ms;
+}
+
+#alignement{
+  padding-left: 90px !important;
+}
+
+#formSearch{
+  width: 300px !important;
+}
+#inputSearch{
+  padding-left: 50px !important;
+  font-size: 15px !important;
+}
+#search{
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+#btnAddSearch{
+  display: grid;
+  grid-template-columns: 420px auto;
+  padding-left: 100px !important;
+}
+
+#formSearch{
+margin: 20px;
+}
+
+.mat-input-element {
+  caret-color: #ea4542 !important;
+}
+
+#AlertSucces{
+  color: green;
+  background-color: #d4edda;
+  padding: 20px;
+  margin-top: 15px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+#btn{
+  margin-top: 42px;
+  background-color: #ea4542;
+  color: wheat;
+  font-size: 20px;
+  margin-left: 300px;
+}
+
+#LienDetails:hover{
+  text-decoration: tomato wavy underline;
+  cursor: pointer;
+
+  }
+
+
+#entete-Table{
+  color: #ea4542;
+  font-family: comic sans ms;
+  font-size: 15px;
+}
+
+.card{
+  box-shadow:0 0 70px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%) !important;
+}
+#title-Table{
+
+  border-radius: 10px;
+  background-color: #ea4542;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  bottom: 29px;
+  margin-top: 14px;
+  color: aliceblue;
+}
+
+a{
+  cursor: pointer;
+}
+
+table.table td a.update {
+	color: #FFC107;
+}
+
+table.table td a.delete {
+  color: #F44336;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#titre{
+  font-size: 35px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-family: comic sans ms;
+}
+
+#TostDangerTile{
+  color: red;
+  font-size: large;
+}
+
+#TostDangerContenu{
+  font-size: 18px;
+}
+
+
+#TostSuccessTile{
+  color: green;
+  font-size: large;
+}
+
+#TostSuccessContenu{
+  font-size: 18px;
+}
+
+#ToastDiv{
+  font-family: comic sans ms;
+  margin-right: 2rem !important;
+  position: absolute !important;
+  padding: 10px;
+  bottom: 2rem !important;
+  right:0 !important;
+  animation: fadein 3s;
+ }
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
