@@ -1,0 +1,57 @@
+<div class="main-content" style="background-color: #f3f5f9">
+  <div class="container" style="padding-left : 35px !important;padding-top: 30px;padding-right: 30px !important;">
+    <h2 class="section-heading" *ngIf="direction">Direction : {{direction.nom_Direction}}</h2>
+    <h3 id="piloteStyle" *ngIf="pilote"> Pilote : {{pilote.nom}} {{pilote.prenom}}</h3>
+  </div>
+</div>
+
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12" id="card-Table">
+        <div class="card" >
+          <div class="card-header card-header-danger" id="title-Table">
+            <h3 class="card-title" id="titre">Formation List</h3><br>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive" >
+              <table class="table">
+                <thead class=" text-primary">
+                  <th id="entete-Table">
+                    Employee Name
+                  </th>
+                  <th id="entete-Table">
+                    Employee Profession
+                  </th>
+                  <th id="entete-Table">
+                    Action
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let employee of Employees">
+                    <td id="Cont" >
+                      {{employee.nom}}
+                      {{employee.prenom}}
+                    </td>
+                    <td id="Cont">
+                     {{employee.profession}}
+                    </td>
+
+                    <td class="text-primary" style=" padding-left: 35px;">
+                      <a (click)="DetailsFormation(employee)" class="view" style="cursor: pointer;color: #4885a1;margin-right: 6px;" data-toggle="modal"><i class="material-icons"
+                          data-toggle="tooltip" title="View Formation details">&#xE417;</i></a>
+                          <a class="accept" style="cursor: pointer;" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" ><i title="Accepted" class="fas fa-check"></i></i></a>
+                          <a class="delete" style="cursor: pointer;color:#cb726c" data-toggle="modal"><i class="material-icons"
+                          data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
