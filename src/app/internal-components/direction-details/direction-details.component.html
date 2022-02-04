@@ -29,17 +29,17 @@
                   </th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let employee of Employees">
+                  <tr *ngFor="let formation of FormationList">
                     <td id="Cont" >
-                      {{employee.nom}}
-                      {{employee.prenom}}
+                      {{formation.user?.nom}}
+                      {{formation.user?.prenom}}
                     </td>
                     <td id="Cont">
-                     {{employee.profession}}
+                     {{formation.user?.profession}}
                     </td>
 
                     <td class="text-primary" style=" padding-left: 35px;">
-                      <a (click)="DetailsFormation(employee)" class="view" style="cursor: pointer;color: #4885a1;margin-right: 6px;" data-toggle="modal"><i class="material-icons"
+                      <a (click)="DetailsFormation(formation)" class="view" style="cursor: pointer;color: #4885a1;margin-right: 6px;" data-toggle="modal"><i class="material-icons"
                           data-toggle="tooltip" title="View Formation details">&#xE417;</i></a>
                           <a class="accept" style="cursor: pointer;" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" ><i title="Accepted" class="fas fa-check"></i></i></a>
                           <a class="delete" style="cursor: pointer;color:#cb726c" data-toggle="modal"><i class="material-icons"

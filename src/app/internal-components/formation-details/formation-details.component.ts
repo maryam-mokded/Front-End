@@ -11,7 +11,7 @@ import { FormationService } from 'src/app/Services/formation.service';
 })
 export class FormationDetailsComponent implements OnInit {
 
-  Employee!:User;
+  Formation!:Formation;
 
   constructor(
     private dialogClose: MatDialog,
@@ -23,8 +23,8 @@ export class FormationDetailsComponent implements OnInit {
   }
 
   DetailsFormation(){
-    this.Employee =JSON.parse(localStorage.getItem('Employee') || '[]') || [];
-    console.log(this.Employee);  
+    this.Formation =JSON.parse(localStorage.getItem('Formation') || '[]') || [];
+    console.log(this.Formation);  
   }
 
   closeDetails(){

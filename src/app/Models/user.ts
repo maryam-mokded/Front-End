@@ -1,6 +1,4 @@
 import { Direction } from "./direction";
-import { Formation } from "./formation";
-
 export class User{
   userId!: number;
   nom!: string;
@@ -15,5 +13,4 @@ export class User{
   dateNaissance!:Date;
   dateEmbauche!:Date;
   direction!:Direction;
-  formations!:Formation;
 }

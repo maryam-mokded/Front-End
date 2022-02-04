@@ -32,9 +32,9 @@ export class MailsService {
     return this.http.post<Mail>(this.UrlApi,mail,httpOptions);
   }
 
-  supprimerMail(id:number):Observable<any>{
+  supprimerMail(id:number){
     const url =`${this.UrlApi}/${id}`;
-    return this.http.delete(`${this.UrlApi}/${id}`);
+    return this.http.delete(url,httpOptions);
   }
 
 }
