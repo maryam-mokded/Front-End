@@ -10,6 +10,9 @@ import { SidebarInternalComponent } from '../Components/sidebar-internal/sidebar
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MailBoxComponent } from './mail-box/mail-box.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
+import { DirectionListComponent } from './direction-list/direction-list.component';
+import { DirectionDetailsComponent } from './direction-details/direction-details.component';
+import { FormationDetailsComponent } from './formation-details/formation-details.component';
 
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,8 +20,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
-
 import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     InternalComponentsComponent,
@@ -27,7 +30,10 @@ import { MatIconModule } from '@angular/material/icon';
     SidebarInternalComponent,
     DashboardComponent,
     MailBoxComponent,
-    EmployeesListComponent
+    EmployeesListComponent,
+    DirectionListComponent,
+    DirectionDetailsComponent,
+    FormationDetailsComponent
   ],
   imports: [
     CommonModule,

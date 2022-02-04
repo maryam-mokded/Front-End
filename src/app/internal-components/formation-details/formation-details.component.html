@@ -1,0 +1,63 @@
+<div class="wrapper" *ngIf="Employee">
+    <div class="card text-white">
+        <div class="bg-pink text">
+          {{Employee.nom}}
+          {{Employee.prenom}}
+        </div>
+        <div class="user">
+        </div>
+        <div class="px-3">
+            <div class="d-flex align-items-center justify-content-between py-3 pe-none">
+                <div class="details snippets">
+                </div>
+                <div class="details project">
+                    <div class="head">
+                      <span id="Details"> Matricule : </span>
+                      <span id="titre"> {{Employee.matricule}}</span>
+                    </div>
+                    <div class="head">
+                      <span id="Details"> Date Naissance : </span>
+                      <span id="titre">{{Employee.dateNaissance | date :'longDate'}} </span>
+                    </div>
+                    <div class="head">
+                      <span id="Details"> Date de recrutement : </span>
+                      <span id="titre"> {{Employee.dateEmbauche | date :'longDate'}}</span>
+                    </div>
+                    <div class="head">
+                      <span id="Details"> Profession : </span>
+                      <span id="titre"> {{Employee.profession}}</span>
+                    </div>
+                </div>
+                <div class="details post">
+                </div>
+            </div><br>
+            <div class="skills">
+                <div class="head text-uppercase" style="font-size :20px">Autre Information</div>
+                <div class=" pb-3 pt-2">
+                    <div class="text-uppercase fs-08">
+                      <span id="titre"> Theme : </span>
+                      <span id="titre">{{Employee.formations?.theme}}</span>
+                    </div>
+                    <div class="text-uppercase fs-08">
+                      <span id="titre"> Type : </span>
+                      <span id="titre">{{Employee.formations.type}}</span>
+                    </div>
+                    <div class="text-uppercase fs-08">
+                      <span id="titre"> Objectif : </span>
+                      <span id="titre">{{Employee.formations!.objectif}}</span>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="details project">
+              <div class="head text-uppercase">
+                <button (click)="closeDetails()" class="btn btn  btn-rounded waves-effect w-md waves-light" style=" margin-left: 290px !important;font-size: 20px;margin-bottom:10px;padding:7px">
+                  Close Details
+                </button>
+              </div>
+          </div>
+  
+  
+        </div>
+    </div>
+  </div>

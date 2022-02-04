@@ -6,6 +6,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MailBoxComponent } from './mail-box/mail-box.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
+import { DirectionListComponent } from './direction-list/direction-list.component';
+import { DirectionDetailsComponent } from './direction-details/direction-details.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,12 @@ const routes: Routes = [
       },
       {
         path: 'dashboard', component: DashboardComponent
+      },
+      {
+        path: 'directions-list', component: DirectionListComponent
+      },
+      {
+        path: 'directions-details/:id', component: DirectionDetailsComponent
       },
       {
         path: 'mail-box', component: MailBoxComponent

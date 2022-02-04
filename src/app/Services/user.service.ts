@@ -23,4 +23,13 @@ export class UserService {
     return this.http.get<User[]>(this.UrlApi);
   }
 
+  getPiloteDetails(id:number):Observable<User>{
+    const url = `${this.UrlApi}/pilote/${id}`
+    return this.http.get<User>(url);
+  }
+
+  ListeUserDirection(id:number): Observable<User[]>{
+    const url = `${this.UrlApi}/direction/${id}`
+    return this.http.get<User[]>(url);
+  }
 }

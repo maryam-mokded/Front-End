@@ -1,3 +1,13 @@
+
+.section-heading{
+    font-size: 30px;
+    font-family: comic sans ms;
+    font-weight: bold;
+    color :  #cb726c;
+    padding-left : 50px;
+    padding-top: 12px;
+}
+
 #card-Table{
   padding-bottom: 20px;
   padding-top: 59px;
@@ -5,7 +15,7 @@
   padding-right: 33px;
 }
 th{
-  color: #fc9209;
+  color: #cb726c;
   font-size: 20px !important;
   font-weight: bold;
   /* text-align: center; */
@@ -51,7 +61,7 @@ margin: 20px;
 }
 
 .mat-input-element {
-  caret-color: #ea4542 !important;
+  caret-color: #cb726c !important;
 }
 
 #AlertSucces{
@@ -67,7 +77,8 @@ margin: 20px;
   margin-top: 42px;
   background-color: #ea4542;
   color: wheat;
-  font-size: 20px;
+  margin-left: 290px !important;
+  font-size: 22px;
   margin-left: 300px;
 }
 
@@ -77,8 +88,9 @@ margin: 20px;
 
   }
 
+
 #entete-Table{
-  color: #fc9209;
+  color: #cb726c;
   font-family: comic sans ms;
   font-size: 15px;
 }
@@ -86,10 +98,24 @@ margin: 20px;
 .card{
   box-shadow:0 0 70px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%) !important;
 }
+#piloteStyle{
+  font-family : comic sans ms;
+  font-size: 20px;
+  padding-left: 123px;
+  margin-bottom: 0px;
+  margin-top: 7px;
+  padding-top: 16px;
+  color: #4885a1;
+}
+.accept{
+  margin-left: 6px !important;
+  color: #6aa56a !important;
+  cursor: pointer;
+  margin: 5px;
+}
 #title-Table{
-
   border-radius: 10px;
-  background-color: #fc9209;
+  background-color: #cb726c;
   margin-left: 20px !important;
   margin-right: 20px !important;
   bottom: 29px;
@@ -109,6 +135,11 @@ table.table td a.delete {
   color: #F44336;
   cursor: pointer;
   margin: 5px;
+}
+
+
+tr:hover{
+  background-color: #f1968f;
 }
 
 #titre{
@@ -155,3 +186,4 @@ table.table td a.delete {
       opacity:1;
   }
 }
+
