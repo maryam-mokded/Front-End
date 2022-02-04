@@ -17,7 +17,7 @@ import { FormationDetailsComponent } from '../formation-details/formation-detail
 export class DirectionDetailsComponent implements OnInit {
  
   pilote!: User;
-  Employees!: User[];
+  FormationList!: Formation[];
   data: any;
   direction!: Direction;
   IdDirection!: number;
@@ -36,7 +36,7 @@ export class DirectionDetailsComponent implements OnInit {
 
     this.GetDirection();
     this.GetPiloteDetails();
-    this.GetEmployeeList();
+    this.GetFormationList();
   }
 
   GetDirection() {
@@ -52,18 +52,18 @@ export class DirectionDetailsComponent implements OnInit {
     });
   }
 
-  GetEmployeeList() {
-  this.userServ.ListeUserDirection(this.data).subscribe((ListEmployee) => {
-      this.Employees = ListEmployee;
-      console.log(this.Employees);
+  GetFormationList() {
+  this.formationServ.ListeFormations(this.data).subscribe((ListEmployee) => {
+      this.FormationList = ListEmployee;
+      console.log(this.FormationList);
     });
   }
 
-  DetailsFormation(employee: User) {
+  DetailsFormation(formation: Formation) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    localStorage.setItem('Employee', JSON.stringify(employee));
+    localStorage.setItem('Formation', JSON.stringify(formation));
     this.dialog.open(FormationDetailsComponent, dialogConfig);
   }
 }

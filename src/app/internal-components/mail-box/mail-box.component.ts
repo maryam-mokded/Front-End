@@ -42,7 +42,8 @@ export class MailBoxComponent implements OnInit {
   }
 
   SupprimerMail(mail:Mail){
-     this.mailServ.supprimerMail(3).subscribe(()=>{
+    console.log(mail.id_Contact)
+     this.mailServ.supprimerMail(mail.id_Contact).subscribe(()=>{
         console.log("Mail Supprimé !")
         window.location.reload();
       });

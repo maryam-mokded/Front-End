@@ -18,8 +18,9 @@ export class FormationService {
     private http : HttpClient
   ) { }
 
-  ListeFormations(): Observable<Formation[]>{
-    return this.http.get<Formation[]>(this.UrlApi);
+  ListeFormations(id:number): Observable<Formation[]>{
+    const url = `${this.UrlApi}/direction/${id}`
+    return this.http.get<Formation[]>(url);
   }
 
     
