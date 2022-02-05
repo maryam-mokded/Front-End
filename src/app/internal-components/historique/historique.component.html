@@ -1,8 +1,8 @@
-<div class="wrapper" *ngIf="Formation">
+<div class="wrapper" *ngIf="Historique">
     <div class="card text-white">
         <div class="bg-pink text">
-          {{Formation.user?.nom}}
-          {{Formation.user?.prenom}}
+          {{Historique.user?.nom}}
+          {{Historique.user?.prenom}}
         </div>
         <div class="user">
         </div>
@@ -13,19 +13,19 @@
                 <div class="details project">
                     <div class="head">
                       <span id="Details"> Matricule : </span>
-                      <span id="titre"> {{Formation.user?.matricule}}</span>
+                      <span id="titre"> {{Historique.user?.matricule}}</span>
                     </div>
                     <div class="head">
                       <span id="Details"> Date Naissance : </span>
-                      <span id="titre">{{Formation.user?.dateNaissance | date :'longDate'}} </span>
+                      <span id="titre">{{Historique.user?.dateNaissance | date :'longDate'}} </span>
                     </div>
                     <div class="head">
                       <span id="Details"> Date de recrutement : </span>
-                      <span id="titre"> {{Formation.user?.dateEmbauche | date :'longDate'}}</span>
+                      <span id="titre"> {{Historique.user?.dateEmbauche | date :'longDate'}}</span>
                     </div>
                     <div class="head">
                       <span id="Details"> Profession : </span>
-                      <span id="titre"> {{Formation.user?.profession}}</span>
+                      <span id="titre"> {{Historique.user?.profession}}</span>
                     </div>
                 </div>
                 <div class="details post">
@@ -36,16 +36,27 @@
                 <div class=" pb-3 pt-2">
                     <div class="text-uppercase fs-08 TypeFormation">
                       <span id="titre"> Theme : </span>
-                      <span id="titre">{{Formation.theme}}</span>
+                      <span id="titre">{{Historique.theme_H}}</span>
                     </div>
                     <div class="text-uppercase fs-08 TypeFormation">
                       <span id="titre"> Type : </span>
-                      <span id="titre">{{Formation.type}}</span>
+                      <span id="titre">{{Historique.type_H}}</span>
                     </div>
                     <div class="text-uppercase fs-08 TypeFormation">
                       <span id="titre"> Objectif : </span>
-                      <span id="titre">{{Formation.objectif}}</span>
+                      <span id="titre">{{Historique.objectif_H}}</span>
                     </div>
+         
+                    <div class="text-uppercase fs-08 refused" *ngIf="Historique.accept_H == 0" >
+                      <span id="titre" class="refused">Results : </span>
+                      <span id="titre" class="refused">Refused</span>
+                    </div>
+                 
+                    <div class="text-uppercase fs-08 accepted" *ngIf="Historique.accept_H == 1">
+                      <span id="titre" class="accepted">Results : </span>
+                      <span id="titre" class="accepted">Accepted</span>
+                    </div>
+
                 </div>
             </div>
   

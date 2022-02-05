@@ -5,6 +5,7 @@ export class Formation{
     theme!: string;
     type!: string;
     objectif!: string;
+    validate!:number;
     user!:User;
   }
   

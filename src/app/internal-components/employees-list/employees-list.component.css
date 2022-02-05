@@ -83,6 +83,16 @@ margin: 20px;
   font-size: 15px;
 }
 
+
+#btnAdd{
+  font-size: 20px;
+  margin-left: 830px;
+  margin-top: 46px;
+  color: #fc9209;
+  background-color: beige;
+
+}
+
 .card{
   box-shadow:0 0 70px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%) !important;
 }

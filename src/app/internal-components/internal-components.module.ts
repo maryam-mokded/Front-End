@@ -13,14 +13,24 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 import { DirectionListComponent } from './direction-list/direction-list.component';
 import { DirectionDetailsComponent } from './direction-details/direction-details.component';
 import { FormationDetailsComponent } from './formation-details/formation-details.component';
+import { HistoriqueComponent } from './historique/historique.component';
+import { FormationListComponent } from './formation-list/formation-list.component';
+import { AddFormationComponent } from './add-formation/add-formation.component';
+import { UpdateFormationComponent } from './update-formation/update-formation.component';
 
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +43,15 @@ import { MatIconModule } from '@angular/material/icon';
     EmployeesListComponent,
     DirectionListComponent,
     DirectionDetailsComponent,
-    FormationDetailsComponent
+    FormationDetailsComponent,
+    HistoriqueComponent,
+    FormationListComponent,
+    AddFormationComponent,
+    UpdateFormationComponent,
+    NotificationsComponent,
+    EmployeeDetailsComponent,
+    UpdateEmployeeComponent,
+    CreateEmployeeComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +60,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatSortModule,
     MatTableModule,
     MatPaginatorModule,
-    InternalComponentsRoutingModule
+    InternalComponentsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatMenuModule
+
   ]
 })
 export class InternalComponentsModule { }

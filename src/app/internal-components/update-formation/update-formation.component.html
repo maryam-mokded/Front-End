@@ -1,0 +1,77 @@
+<div class="container">
+
+  <div mat-dialog-title id="dialog-title">
+    <div>
+      <h1>Update Formation </h1>
+    </div>
+    <div><button id="IconClose" (click)="onClose()"><i class="fas fa-times"></i></button></div>
+  </div>
+
+  <form class="needs-validation" novalidate>
+
+
+    <!-- <div class="form-group">
+      <label>Id Formation</label>
+      <input type="text" 
+             [(ngModel)]="formation.id_Formation"
+             class="form-control" 
+             name="id_Formation" >
+    </div> -->
+
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Employee</label>
+      <select type="text" class="form-control" id="idEmplyee" name="idEmplyee" 
+               [(ngModel)]="idEmployee">
+        <option *ngFor="let e of Employees" [value]="e.id_User">
+          {{e.matricule}} - {{e.nom}} {{e.prenom}}
+          ( {{e.profession}} )
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Theme Formation</label>
+      <input type="text" 
+             [(ngModel)]="formation.theme"
+             class="form-control" 
+             name="theme" 
+             placeholder="Theme Formation">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Type Formation</label>
+      <select class="form-control" 
+              id="exampleFormControlSelect1" 
+             [(ngModel)]="formation.type"
+              name="type">
+        <option value="Formation à caractère d'information et de sensibilisation">
+          Formation à caractère d'information et de sensibilisation
+        </option>
+        <option value="Formation a contenu professionnel théorique">
+          Formation a contenu professionnel théorique
+        </option>
+        <option value="Formation sur les applications informatiques">
+          Formation sur les applications informatiques
+        </option>
+        <option value="Formation a contenu professionnel pratique">
+          Formation a contenu professionnel pratique
+        </option>
+        <option value="Formation dans les nouvelles technologies">
+          Formation dans les nouvelles technologies
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Objectif Formation</label>
+      <textarea class="form-control" 
+                name="objectif" 
+                [(ngModel)]="formation.objectif" 
+                rows="3"></textarea>
+    </div>
+
+    <div id="btn">
+      <button type="button" (click)="onClose()" id="btnClose" class="btn btn-danger">Annuler</button>
+      <button type="submit" (click)="MofidierFormation()"  class="btn btn-info">Update</button>
+    </div>
+  </form>
+</div>

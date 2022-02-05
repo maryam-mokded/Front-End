@@ -8,6 +8,7 @@ import { MailBoxComponent } from './mail-box/mail-box.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { DirectionListComponent } from './direction-list/direction-list.component';
 import { DirectionDetailsComponent } from './direction-details/direction-details.component';
+import { FormationListComponent } from './formation-list/formation-list.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,9 @@ const routes: Routes = [
       },
       {
         path: 'directions-list', component: DirectionListComponent
+      },
+      {
+        path: 'formations-list', component: FormationListComponent
       },
       {
         path: 'directions-details/:id', component: DirectionDetailsComponent

@@ -1,3 +1,6 @@
+
+ <button (click)="AddEmployeePopUp()"  type="button" class="btn btn-warning" id="btnAdd"><i class="fas fa-plus" style="color:#fc9209"></i> Add</button>
+
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
@@ -30,12 +33,10 @@
                     </td>
 
                     <td class="text-primary" style=" padding-left: 35px;">
-                      <a class="update" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
+                      <a (click)="UpdateEmployee(employee)" class="update" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
                           data-toggle="tooltip" title="Affect Interview">&#xE254;</i></a>
-                      <a class="view" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
+                      <a (click)="DetailsEmployee(employee)" class="view" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
                           data-toggle="tooltip" title="View interview details">&#xE417;</i></a>
-                      <a class="delete" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
-                          data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     </td>
                   </tr>
                 </tbody>
