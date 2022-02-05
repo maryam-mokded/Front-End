@@ -1,0 +1,57 @@
+
+#btnClose{
+    margin-right: 7px;
+    }
+  
+    #btn
+  {
+    margin-top: 20px;
+    padding-left: 445px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  #IconClose{
+    background-color: white;
+    border-radius: 35%;
+  }
+  
+  #dialog-title{
+    display: grid;
+    grid-template-columns: 95% 5%;
+  }
+  
+  .form-control.ng-touched.ng-invalid {
+    border:1px solid rgb(238, 28, 28);
+   }
+   .form-control.ng-touched.ng-valid {
+    border:1px solid rgb(9, 211, 9);
+   }
+  
+  
+  
+   label{
+    font-size: 20px;
+    padding: 10px;
+   }
+
+   h1{
+    font-weight: bold;
+    font-family: comic sans ms;
+   }
+
+   select{
+    font-size: 20px; 
+    height: 45px !important;
+   }
+   input{
+    font-size: 20px;
+    height: 38.5px;
+   }
+   textarea{
+     font-size:20px;
+   }
+   button{
+     font-size :20px;
+   }

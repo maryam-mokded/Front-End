@@ -1,0 +1,110 @@
+<div class="main-content" style="background-color: #f3f5f9">
+  <div class="container" style="padding-left : 35px !important;padding-top: 30px;padding-right: 30px !important;">
+    <div class="row">
+
+      <div class="Action">
+        <div>
+          <button (click)="AjouterFormation()" type="button" class="btn btn-success btnAdd">&nbsp;<i
+              class="fas fa-plus"></i> &nbsp;&nbsp;Add&nbsp;&nbsp;</button>
+        </div>
+        <div>
+           <button *ngIf="historique == true" (click)="AfficherNews()" type="button" class="btn btn-secondary" id="btnHistorique"> <i
+            class="fas fa-newspaper" style="color:#6c757d"></i> News</button>
+   
+          <button *ngIf="historique == false" (click)="AfficherHistorique()" type="button" class="btn btn-secondary" id="btnHistorique"> <i
+              class="fas fa-history" style="color:#6c757d"></i> History</button>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-12" id="card-Table" *ngIf="historique == false">
+        <div class="card">
+          <div class="card-header card-header-danger" id="title-Table">
+            <h3 class="card-title" id="titre">Formation List</h3><br>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th id="entete-Table">
+                    Employee Name
+                  </th>
+                  <th id="entete-Table">
+                   Formation
+                  </th>
+                  <th id="entete-Table">
+                    Action
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let formation of FormationList">
+                    <td id="Cont">
+                      {{formation.user?.nom}}
+                      {{formation.user?.prenom}}
+                    </td>
+                    <td id="Cont">
+                      {{formation.theme}}
+                    </td>
+
+                    <td *ngIf="formation.validate == 0" class="text-primary" style=" padding-left: 35px;">
+                      <a (click)="DetailsFormation(formation)" class="view"
+                        style="cursor: pointer;color: #4885a1;margin-right: 6px;" data-toggle="modal"><i
+                          class="material-icons" data-toggle="tooltip" title="View Formation details">&#xE417;</i></a>
+                      <a (click)="ModifierFormation(formation)" class="update" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
+                            data-toggle="tooltip" title="Update Formation">&#xE254;</i></a>
+                    
+                      <a (click)="EnvoyerFormation(formation)" class="accept" style="cursor: pointer;color: #417a4b;"
+                        data-toggle="modal"><i class="material-icons" data-toggle="tooltip"><i title="Send"
+                            class="fas fa-check"></i></i></a>
+                      <a (click)="SupprimerFormation(formation)" class="delete" data-toggle="modal"><i
+                          class="material-icons" data-toggle="tooltip"><i title="Delete"
+                            class="fas fa-times"></i></i></a>
+
+                    </td>
+                    <td *ngIf="formation.validate == 1" style="padding-left: 42px;">
+                      Envoyee
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="row" *ngIf="historique == true" style="width: 935px;">
+        <div class="col-md-12">
+          <table class="table table-hover">
+            <thead>
+              <th scope="col" id="td">Employee Name</th>
+              <th scope="col" id="td">Employee Profession</th>
+              <th scope="col" id="td">Formation</th>
+              <th scope="col" id="td">Action</th>
+
+            </thead>
+            <tbody>
+              <tr *ngFor="let historique of HistoriqueList" (click)="DetailsHistorique(historique)">
+                <td id="Center"> {{historique.user?.nom}} {{historique.user?.prenom}}</td>
+                <td id="Center">{{historique.user?.profession}}</td>
+                <td id="Center">{{historique.theme_H}}</td>
+                <td *ngIf="historique.accept_H == 0" class="refused" id="Center">Refused</td>
+                <td *ngIf="historique.accept_H == 1" class="accepted" id="Center">Accepted</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>

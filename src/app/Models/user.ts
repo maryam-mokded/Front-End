@@ -1,6 +1,6 @@
 import { Direction } from "./direction";
 export class User{
-  userId!: number;
+  id_User!: number;
   nom!: string;
   prenom!: string;
   email!: string;
@@ -9,6 +9,7 @@ export class User{
   profession!:string;
   tel!: number;
   pilote!:number;
+  niveau!:string;
   matricule!:string;
   dateNaissance!:Date;
   dateEmbauche!:Date;

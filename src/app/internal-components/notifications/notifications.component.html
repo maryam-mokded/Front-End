@@ -1,0 +1,13 @@
+<div  *ngIf="notification" style="transform: none;width: 650px;">
+  <h2><i class="fas fa-bell" style="color:#ffc107;font-size: 42px;margin-right: 27px;"></i> Notification</h2>
+  <h3>{{notification.message}}</h3>
+<div class="btn">
+  <div style=" margin-left: 330px;">
+    <button routerLink="/inter/formations-list" (click)="closeDetails()" class="btn btn-info " >Add</button>
+  </div>
+  <div  style="margin-left: 100px !important;">
+    <button (click)="closeDetails()" class="btn btn-danger" >Close</button>
+  </div>
+  </div>
+
+</div>

@@ -9,11 +9,6 @@
 body {
     background-color: #333
 }
-.TypeFormation{
-    display:grid;
-    grid-template-columns: 20% 80% ;
-    
-}
 
 .text{
   font-size :40px;
@@ -28,6 +23,11 @@ body {
     justify-content: center;
 }
 
+.TypeFormation{
+  display:grid;
+  grid-template-columns: 20% 80% ;
+  
+}
 .wrapper .card {
     width: 700px;
     min-height: 400px;
@@ -214,6 +214,21 @@ body {
   margin-left: 140px;
   padding: 10px;
 }
+.accepted{
+    color :green !important;
+    font-weight:bold;
+    font-size:25px !important;
+    margin-top: 25px;
+    font-family: comic sans ms !important;
+  }
+  
+  .refused{
+    color :#f44336 !important;
+    margin-top: 25px ;
+    font-weight:bold;
+    font-size:25px !important;
+    font-family: comic sans ms !important;
+  }
 
 #titre{
   padding: 20px;

@@ -11,7 +11,8 @@
         </span>
         <form [formGroup]="myForm" class="needs-validation" novalidate>
           <div>
-            <input class="form-control" type="text" [(ngModel)]="mail.nom" name="nom" formControlName="nom"
+            <input class="form-control" type="text" 
+            [(ngModel)]="mail.nom" name="nom" formControlName="nom"
               placeholder="Name">
             <div *ngIf="nom?.invalid && nom?.touched" class="text-danger" id="validate">
               Name is not validate (minimum 2 caratères).

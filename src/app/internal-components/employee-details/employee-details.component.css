@@ -10,9 +10,7 @@ body {
     background-color: #333
 }
 .TypeFormation{
-    display:grid;
-    grid-template-columns: 20% 80% ;
-    
+  margin:15px;    
 }
 
 .text{
@@ -40,11 +38,11 @@ body {
 .wrapper .card .bg-pink {
     width: 100%;
     height: 100px;
-    background-color: #F44336;
+    background-color: #fc9209;
     animation: img-top 0.8s linear
 }
 .bg-pink{
-  background-color: #F44336 !important;
+  background-color: #fc9209 !important;
 }
 
 .wrapper .card .img-container {
@@ -93,16 +91,16 @@ body {
 
 .wrapper .card .btn:hover,
 .wrapper .card .btn.following {
-    background-color: #F44336
+    background-color: #fc9209
 }
 
 .wrapper .card .btn.following:hover {
-    background-color: #ea4542
+    background-color: #fc9209
 }
 
 .wrapper .card .head {
     font-size: 0.8rem;
-    color: #F44336;
+    color: #fc9209;
     font-weight: 600
 }
 

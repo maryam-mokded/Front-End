@@ -1,0 +1,22 @@
+h2{
+  font-size: 30px;
+  color: #ffc107;
+  font-family: comic sans ms;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 20px;
+  margin-left: 25px;
+  margin-top: 27px;
+}
+button{
+  font-size:20px;
+  font-familly: comic sans ms;
+  right :100%;
+}
+.btn{
+  display:grid;
+  grid-template-columns : 50% 50%;
+}
+

@@ -23,6 +23,11 @@ export class UserService {
     return this.http.get<User[]>(this.UrlApi);
   }
 
+  ConsulterEmployee(id:number):Observable<User>{
+    const url = `${this.UrlApi}/${id}`
+    return this.http.get<User>(url);
+  }
+
   getPiloteDetails(id:number):Observable<User>{
     const url = `${this.UrlApi}/pilote/${id}`
     return this.http.get<User>(url);
@@ -31,5 +36,18 @@ export class UserService {
   ListeUserDirection(id:number): Observable<User[]>{
     const url = `${this.UrlApi}/direction/${id}`
     return this.http.get<User[]>(url);
+  }
+
+
+
+  AjouterEmployee(id:number,user:User): Observable<User>{
+    const url =`${this.UrlApi}/${id}`;
+    return this.http.post<User>(url,user,httpOptions);
+  }
+
+
+  modifierUser(idD:number,idU:number,u:User):Observable<User>{
+    const url =`${this.UrlApi}/${idD}/${idU}`;
+    return this.http.put<User>(url,u);
   }
 }

@@ -1,0 +1,90 @@
+<div class="container">
+
+  <div mat-dialog-title id="dialog-title">
+    <div>
+      <h1>Add Employee </h1>
+    </div>
+    <div><button id="IconClose" (click)="onClose()"><i class="fas fa-times"></i></button></div>
+  </div>
+
+  <form class="needs-validation" novalidate>
+
+
+    <div class="form-row">
+      <div class="col-md-6 mb-6">
+        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="nom" [(ngModel)]="user.nom" name="name">
+       
+      </div>
+      <div class="col-md-6 mb-6">
+        <label>Last Name</label>
+        <input type="text" class="form-control"  [(ngModel)]="user.prenom" name="prenom"
+          placeholder="prénom">
+       
+      </div>
+    </div>
+
+
+
+    <div class="form-row">
+      <div class="col-md-4 mb-6">
+        <label>Matricule</label>
+        <input type="text" class="form-control" placeholder="1111M" [(ngModel)]="user.matricule" name="matricule">
+       
+      </div> 
+      <div class="col-md-4 mb-6">
+        <label>CIN</label>
+        <input type="text" class="form-control" placeholder="11111111" [(ngModel)]="user.cin" name="cin">
+       
+      </div>
+      <div class="col-md-4 mb-6">
+        <label>Tel</label>
+        <input type="text" class="form-control" [(ngModel)]="user.tel" name="tel"
+          placeholder="(+216) 25 369 369 ">
+       
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="col-md-7 mb-6">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="example@gmail.com" [(ngModel)]="user.email" name="email">
+       
+      </div>
+      <div class="col-md-5 ">
+        <label>Date Embauche</label>
+        <input type="date" class="form-control" [(ngModel)]="user.dateEmbauche" name="dateEmbauche" placeholder="dateEmbauche">
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="col-md-7 mb-6">
+      
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Direction</label>
+      <select type="text" class="form-control" id="idDirection" name="idDirection" [(ngModel)]="idDirection">
+        <option *ngFor="let d of direction" [value]="d.id_Direction">
+          {{d.nom_Direction}}
+        </option>
+      </select>
+   </div>
+</div>
+   <div class="col-md-5 mb-6">
+    <label>Profession</label>
+    <input type="text" class="form-control" [(ngModel)]="user.profession" name="profession" placeholder="profession">
+  </div>
+
+
+  </div>
+
+
+
+
+    <div id="btn">
+      <button type="button" (click)="onClose()" id="btnClose" class="btn btn-danger">Annuler</button>
+      <button type="submit" (click)="AddEmployee()" class="btn btn-info">Add</button>
+    </div>
+  </form>
+</div>
