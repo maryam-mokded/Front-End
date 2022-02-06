@@ -5,6 +5,14 @@ body{margin-top:20px;
       font-size: 35px !important;
   }
 
+  .text-danger{
+    font-size: 18px;
+  }
+  .text-success{
+    font-size: 18px;
+  }
+
+
   .mw50 {
       max-width: 50px !important;
   }

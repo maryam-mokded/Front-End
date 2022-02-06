@@ -1,46 +1,77 @@
-
- <button (click)="AddEmployeePopUp()"  type="button" class="btn btn-warning" id="btnAdd"><i class="fas fa-plus" style="color:#fc9209"></i> Add</button>
-
 <div class="main-content">
+  <div id="btnAddSearch">
+    <div>
+      <div class="search-container">
+        <mat-form-field id="formSearch" appearance="fill" aria-autocomplete="off" (keyup)="filterData($event)">
+          <div id="search">
+            <div><input id="inputSearch" matInput placeholder="Employee Search" /></div>
+            <div><span class='material-icons'>search</span></div>
+          </div>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <button (click)="AddEmployeePopUp()"  type="button" class="btn btn-warning" id="btnAdd"><i class="fas fa-plus" style="color:#fc9209"></i> Add</button>
+
+    </div>
+
+  </div>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12" id="card-Table">
         <div class="card">
           <div class="card-header card-header-danger" id="title-Table">
-            <h3 class="card-title" id="titre">Employees Table</h3><br>
+            <h3 class="card-title" id="titre">Employees List</h3><br>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table">
-                <thead class=" text-primary">
-                  <th id="entete-Table">
-                    Employee First Name
-                  </th>
-                  <th id="entete-Table">
-                    Employee Last Name
-                  </th>
-                  <th id="entete-Table">
-                    Action
-                  </th>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let employee of EmployeeList">
-                    <td id="Cont">
-                      {{employee.nom}}
-                    </td>
-                    <td id="Cont">
-                      {{employee.prenom}}
-                    </td>
+              <table mat-table matSort [dataSource]="dataSource!" class="table">
 
-                    <td class="text-primary" style=" padding-left: 35px;">
-                      <a (click)="UpdateEmployee(employee)" class="update" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
-                          data-toggle="tooltip" title="Affect Interview">&#xE254;</i></a>
-                      <a (click)="DetailsEmployee(employee)" class="view" style="cursor: pointer;" data-toggle="modal"><i class="material-icons"
-                          data-toggle="tooltip" title="View interview details">&#xE417;</i></a>
-                    </td>
-                  </tr>
-                </tbody>
+                <ng-container matColumnDef="id_User">
+                  <th mat-header-cell *matHeaderCellDef hidden> id User </th>
+                  <td id="alignement" mat-cell *matCellDef="let element" hidden> {{element.id_User}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="matricule">
+                  <th mat-sort-header mat-header-cell *matHeaderCellDef> Matricule </th>
+                  <td id="alignement" mat-cell *matCellDef="let element"> {{element.matricule}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="nom">
+                  <th mat-sort-header mat-header-cell *matHeaderCellDef> First Name </th>
+                  <td id="alignement" mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="prenom">
+                  <th mat-sort-header mat-header-cell *matHeaderCellDef> Last Name </th>
+                  <td id="alignement" mat-cell *matCellDef="let element"> {{element.prenom}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="profession">
+                  <th mat-sort-header mat-header-cell *matHeaderCellDef> Profession </th>
+                  <td id="alignement" mat-cell *matCellDef="let element"> {{element.profession }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> Action</th>
+                  <td id="alignement" mat-cell *matCellDef="let element">
+                    <a  (click)="UpdateEmployee(element)" class="update"
+                      data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                        title="Update">&#xE254;</i></a>
+                     <a (click)="DetailsEmployee(element)" class="view" data-toggle="modal"><i class="material-icons"
+                        data-toggle="tooltip" title="View">&#xE417;</i></a>
+                  </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
               </table>
+              <mat-paginator #paginator [pageSize]="2" [pageSizeOptions]="[2, 3, 5, 10, 25, 100]">
+              </mat-paginator>
             </div>
           </div>
         </div>

@@ -2,38 +2,67 @@
 
   <div mat-dialog-title id="dialog-title">
     <div>
-      <h1>Add Formation </h1>
-    </div>
+      <h1>Add Formation<span style="color: red;">* required</span> </h1>
+        </div>
     <div><button id="IconClose" (click)="onClose()"><i class="fas fa-times"></i></button></div>
   </div>
 
-  <form class="needs-validation" novalidate>
+  <form [formGroup]="myForm" class="needs-validation" novalidate>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Employee</label>
-      <select type="text" class="form-control" id="idEmplyee" name="idEmplyee" [(ngModel)]="idEmployee">
+      <label for="exampleFormControlSelect1">Employee<span style="color: red;">*</span></label>
+    <select type="text"
+    class="form-control"
+            id="idEmployee"
+            [(ngModel)]="idEmployee"
+            name="idEmployee"
+            formControlName="idEmployee" >
         <option *ngFor="let e of Employees" [value]="e.id_User">
           {{e.matricule}} - {{e.nom}} {{e.prenom}}
           ( {{e.profession}} )
         </option>
-      </select>
-    </div>
+        </select>
+        <div
+        *ngIf="Employee?.invalid && Employee?.touched"
+         class="text-danger">
+         please choose the employee !
+  </div>
+  <div
+       *ngIf="Employee?.valid && Employee?.touched"
+       class="text-success">
+         Employee Validated.
+  </div>
+  </div>
     <div class="form-group">
-      <label>Theme Formation</label>
-      <input type="text" 
+      <label>Theme Formation <span style="color: red;">*</span></label>
+      <input type="text"
              [(ngModel)]="formation.theme"
-             class="form-control" 
-             name="theme" 
+             class="form-control"
+             name="theme"
+             formControlName="theme"
              placeholder="Theme Formation">
+
+      <div
+            *ngIf="theme?.invalid && theme?.touched"
+            class="text-danger">
+              Theme Foramtion invalide (minimum 2 caratères).
+      </div>
+        <div
+            *ngIf="theme?.valid && theme?.touched"
+            class="text-success">
+            Theme Formation is Validated!
+        </div>
+
+
     </div>
 
 
-
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Type Formation</label>
-      <select class="form-control" 
-              id="exampleFormControlSelect1" 
+      <label for="exampleFormControlSelect1">Type Formation <span style="color: red;">*</span></label>
+      <select class="form-control"
+              id="exampleFormControlSelect1"
              [(ngModel)]="formation.type"
+             formControlName="type"
               name="type">
         <option value="Formation à caractère d'information et de sensibilisation">
           Formation à caractère d'information et de sensibilisation
@@ -51,19 +80,34 @@
           Formation dans les nouvelles technologies
         </option>
       </select>
+
+
+      <div
+      *ngIf="type?.invalid && type?.touched"
+      class="text-danger">
+        Invalide Type Formation.
+</div>
+  <div
+      *ngIf="type?.valid && type?.touched"
+      class="text-success">
+      Type Formation is Validated!
+  </div>
+
+
     </div>
 
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Objectif Formation</label>
-      <textarea class="form-control" 
-                name="objectif" 
-                [(ngModel)]="formation.objectif" 
+      <textarea class="form-control"
+                name="objectif"
+                [(ngModel)]="formation.objectif"
                 rows="3"></textarea>
+
     </div>
 
     <div id="btn">
       <button type="button" (click)="onClose()" id="btnClose" class="btn btn-danger">Annuler</button>
-      <button type="submit" (click)="AddFormation()" class="btn btn-info">Add</button>
+      <button type="submit" [disabled]="myForm.invalid" (click)="AddFormation()" class="btn btn-info">Add</button>
     </div>
   </form>
 </div>

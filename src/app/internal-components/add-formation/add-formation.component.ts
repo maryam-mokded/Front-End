@@ -13,7 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AddFormationComponent implements OnInit {
 
-  idEmployee!:number;
+  idEmployee:number = 1;
   Employees!:User[];
 
   myForm!:FormGroup;
@@ -27,9 +27,32 @@ export class AddFormationComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetEmployeeList();
+    this.ValidatedForm();
   }
 
+
+
+  ValidatedForm(){
+    this.myForm = new FormGroup({
+      'theme' : new FormControl(null,[Validators.required, Validators.minLength(2),Validators.maxLength(100)]),
+      'type' : new FormControl(null,[Validators.required, Validators.minLength(2),Validators.maxLength(100)]),
+      'idEmployee' : new FormControl(null),
+  });
+ }
+
+
+ get Employee(){
+   return this.myForm.get('idEmployee') ;
+ }
+ get theme(){
+   return this.myForm.get('theme') ;
+ }
+ get type(){
+   return this.myForm.get('type') ;
+ }
+
   AddFormation(){
+    // console.log(this.idEmployee)
     this.formationServ.AjouterFormation(this.idEmployee,this.formation).subscribe(f =>{
       console.log("Formation Ajouter avec succees !")
       console.log(f);

@@ -17,17 +17,15 @@ import { UpdateEmployeeComponent } from '../update-employee/update-employee.comp
 })
 export class EmployeesListComponent implements OnInit {
 
-  // AddForPaginator
-  @ViewChild('paginator') paginator!:MatPaginator;
-  // AddForSotedData
-  @ViewChild(MatSort) matSort!:MatSort;
+   // AddForPaginator
+   @ViewChild('paginator') paginator!:MatPaginator;
+   // AddForSotedData
+   @ViewChild(MatSort) matSort!:MatSort;
 
-  dataSource!:MatTableDataSource<any>;
-
-  ELEMENT_DATA?:User[];
-  displayedColumns: string[] = ['userId','nom', 'prenom','action'];
-
-  EmployeeList?:User[];
+   nb?:number;
+   ELEMENT_DATA?:User[];
+   displayedColumns: string[] = ['id_User', 'matricule','nom', 'prenom', 'profession', 'action'];
+   dataSource!:MatTableDataSource<any>;
 
   constructor(
     private dialog: MatDialog,
@@ -40,7 +38,7 @@ export class EmployeesListComponent implements OnInit {
 
   getListUser(){
     this.userServ.ListeUser().subscribe(ListUser =>{
-      this.EmployeeList = ListUser;
+      this.ELEMENT_DATA = ListUser;
       this.dataSource = new MatTableDataSource(ListUser);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort =this.matSort;

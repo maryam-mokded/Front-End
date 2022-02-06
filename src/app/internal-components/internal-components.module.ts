@@ -19,7 +19,6 @@ import { AddFormationComponent } from './add-formation/add-formation.component';
 import { UpdateFormationComponent } from './update-formation/update-formation.component';
 
 
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -31,6 +30,9 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
     FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule
 
   ]
 })

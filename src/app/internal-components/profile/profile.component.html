@@ -1,4 +1,4 @@
-<div class="main-content" style="background-color: #f3f5f9">
+<div class="main-content" style="background-color: #f3f5f9" *ngIf="user">
   <div class="container" style="padding-left : 35px !important;padding-top: 30px;padding-right: 30px !important;">
     <div class="row">
       <section id="content" class="container">
@@ -13,10 +13,10 @@
             <div class="media-body va-m">
               <h2 class="media-heading"
                 style="font-weight: bold;font-size: 50px;padding-left: 94px;padding-top: 109px;font-family: comic sans ms;">
-                Michael Halls
+                {{user.prenom}} {{user.nom}}
                 <small style="font-size: 25px !important;"> - Profile</small>
               </h2>
-              <div >
+              <div>
                 <ul class="list-inline list-unstyled" style="padding-top: 21px;padding-left: 199px;">
                   <li>
                     <a href="#" title="facebook link">
@@ -84,12 +84,18 @@
                 <span class="panel-title" style="font-weight: bold;"> My Skills</span>
               </div>
               <div class="panel-body pb5" style="height: 120px;padding-top: 20px; ">
-                <span class="label label-warning mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Communication</span>
-                <span class="label label-primary mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Computer skills</span><br><br>
-                <span class="label label-info mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">LeaderShip</span>
-                <span class="label label-success mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Problem-solving</span><br><br>
-                <span class="label label-warning mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Time Management</span>
-                <span class="label label-primary mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Customr service</span>
+                <span class="label label-warning mr5 mb10 ib lh15"
+                  style="font-size: 14px;margin-right: 10px;">Communication</span>
+                <span class="label label-primary mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Computer
+                  skills</span><br><br>
+                <span class="label label-info mr5 mb10 ib lh15"
+                  style="font-size: 14px;margin-right: 10px;">LeaderShip</span>
+                <span class="label label-success mr5 mb10 ib lh15"
+                  style="font-size: 14px;margin-right: 10px;">Problem-solving</span><br><br>
+                <span class="label label-warning mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Time
+                  Management</span>
+                <span class="label label-primary mr5 mb10 ib lh15" style="font-size: 14px;margin-right: 10px;">Customr
+                  service</span>
 
               </div>
             </div>
@@ -150,7 +156,7 @@
                       <label for="inputEmail4">First Name</label>
                     </div>
                     <div class="form-group col-md-7">
-                       <p style="font-size: 20px;"> Mokded </p>
+                      <p style="font-size: 20px;"> {{user.nom}} </p>
                     </div>
                   </div>
 
@@ -159,7 +165,7 @@
                       <label for="inputEmail4">Last Name</label>
                     </div>
                     <div class="form-group col-md-7">
-                       <p style="font-size: 20px;"> Maryam </p>
+                      <p style="font-size: 20px;"> {{user.prenom}} </p>
                     </div>
                   </div>
 
@@ -168,7 +174,7 @@
                       <label for="inputEmail4">CIN</label>
                     </div>
                     <div class="form-group col-md-7">
-                       <p style="font-size: 20px;"> 11427586 </p>
+                      <p style="font-size: 20px;"> {{user.cin}} </p>
                     </div>
                   </div>
 
@@ -177,7 +183,7 @@
                       <label for="inputEmail4">Tel</label>
                     </div>
                     <div class="form-group col-md-7">
-                       <p style="font-size: 20px;">(+216) 53 740 917 </p>
+                      <p style="font-size: 20px;">(+216) {{user.tel}} </p>
                     </div>
                   </div>
 
@@ -186,7 +192,7 @@
                       <label for="inputEmail4">Email</label>
                     </div>
                     <div class="form-group col-md-7">
-                       <p style="font-size: 20px;"> MokdedMaryam@gmail.com </p>
+                      <p style="font-size: 20px;"> {{user.email}} </p>
                     </div>
                   </div>
 
@@ -195,7 +201,7 @@
                       <label for="inputEmail4">Adress</label>
                     </div>
                     <div class="form-group col-md-7">
-                       <p style="font-size: 20px;"> Bizerte </p>
+                      <p style="font-size: 20px;"> {{user.adresse}} </p>
                     </div>
                   </div>
 
@@ -204,25 +210,34 @@
                       <label for="inputEmail4">Date d'embauche</label>
                     </div>
                     <div class="form-group col-md-7">
-                       <p style="font-size: 20px;"> 02 Nov 2021 </p>
+                      <p style="font-size: 20px;"> {{user.dateEmbauche | date :'longDate'}} </p>
                     </div>
                   </div>
 
-                  <button (click)="modifierProfil()" class="btn btn-primary btn-round "  style="margin-left: 451px;margin-top: 20px;font-size: 17px;">
+                  <button (click)="modifierProfil(user)" class="btn btn-primary btn-round "
+                    style="margin-left: 451px;margin-top: 20px;font-size: 17px;">
                     <i class="fas fa-pen fa-lg"></i>
                     Modifier
                   </button>
 
                 </ng-template>
                 <ng-template #elseBlock>
-                  <form  class="needs-validation" novalidate>
+                  <form [formGroup]="myForm" class="needs-validation" novalidate>
 
                     <div class="form-row">
                       <div class="form-group col-md-4">
-                        <label id="label" for="inputEmail4">Nom</label>
+                        <label id="label" for="inputEmail4">Fisrt Name</label>
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Nom" value="Mokded" name="prenom">
+                        <input type="text" class="form-control" placeholder="nom" formControlName="nom"
+                          [(ngModel)]="user.nom" name="name">
+
+                        <div *ngIf="name?.invalid && name?.touched" class="text-danger">
+                          First Name is not validated !
+                        </div>
+                        <div *ngIf="name?.valid && name?.touched" class="text-success">
+                          First Name Validated.
+                        </div>
                       </div>
                     </div>
 
@@ -230,8 +245,18 @@
                       <div class="form-group col-md-4">
                         <label id="label" for="inputEmail4">Prenom</label>
                       </div>
-                      <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Prenom" value="Maryam" name="prenom">
+
+                      <div class="col-md-6 mb-6">
+                        <input type="text" class="form-control" [(ngModel)]="user.prenom" name="prenom"
+                          formControlName="prenom" placeholder="prénom">
+
+                        <div *ngIf="prenom?.invalid && prenom?.touched" class="text-danger">
+                          Last Name is not validated !
+                        </div>
+                        <div *ngIf="prenom?.valid && prenom?.touched" class="text-success">
+                          Last Name Validated.
+                        </div>
+
                       </div>
                     </div>
 
@@ -240,7 +265,15 @@
                         <label id="label" for="inputEmail4">Num Cin</label>
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="11427586" value="11427586" name="prenom">
+                        <input type="text" class="form-control" placeholder="11111111" [(ngModel)]="user.cin"
+                          formControlName="cin" name="cin">
+
+                        <div *ngIf="cin?.invalid && cin?.touched" class="text-danger">
+                          Cin is not validated !
+                        </div>
+                        <div *ngIf="cin?.valid && cin?.touched" class="text-success">
+                          Cin Validated.
+                        </div>
                       </div>
                     </div>
                     <div class="form-row">
@@ -248,7 +281,15 @@
                         <label id="label" for="inputEmail4">Num Tel</label>
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="(+216) 53 740 917" value="(+216) 53 740 917" name="prenom">
+                        <input type="text" class="form-control" [(ngModel)]="user.tel" formControlName="tel" name="tel"
+                          placeholder="(+216) 25 369 369 ">
+
+                        <div *ngIf="tel?.invalid && tel?.touched" class="text-danger">
+                          Phone Number is not validated !
+                        </div>
+                        <div *ngIf="tel?.valid && tel?.touched" class="text-success">
+                          Phone Number Validated.
+                        </div>
                       </div>
                     </div>
 
@@ -257,8 +298,16 @@
                         <label id="label" for="inputEmail4">Email</label>
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="example@example.com" value="MokdedMaryam@gmail.com" name="prenom">
+                        <input type="email" class="form-control" placeholder="example@gmail.com" [(ngModel)]="user.email"
+                        formControlName="email" name="email">
+
+                      <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+                        email is not validated !
                       </div>
+                      <div *ngIf="email?.valid && email?.touched" class="text-success">
+                        email Validated.
+                      </div>
+                        </div>
                     </div>
 
                     <div class="form-row">
@@ -266,7 +315,15 @@
                         <label id="label" for="inputEmail4">Adress</label>
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Adress" value="Bizerte" name="prenom">
+                        <input type="text" class="form-control" [(ngModel)]="user.adresse" formControlName="adresse" name="adresse"
+                        placeholder="Bizerte">
+
+                      <div *ngIf="adresse?.invalid && adresse?.touched" class="text-danger">
+                        Adress is not validated !
+                      </div>
+                      <div *ngIf="adresse?.valid && adresse?.touched" class="text-success">
+                        Adress Validated.
+                      </div>
                       </div>
                     </div>
 
@@ -275,12 +332,13 @@
                         <label id="label" for="inputEmail4">Date d'embauche </label>
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="JJ/MM/YYYY" value="02 Nov 2021" name="prenom" readonly>
+                        <input type="text" class="form-control" placeholder="JJ/MM/YYYY" value="02 Nov 2021"
+                          name="prenom" readonly>
                       </div>
                     </div>
 
-                     <button type="submit"  (click)="modifierProfil()"
-                      class="btn btn-success btn-round" style="margin-left: 458px;  font-size: 18px;margin-top: 19px;">
+                    <button type="submit" (click)="modifierProfil(user)" class="btn btn-success btn-round"
+                      style="margin-left: 458px;  font-size: 18px;margin-top: 19px;">
                       <i class="fas fa-save fa-lg"></i>
                       Enregistrer
                     </button>
@@ -293,7 +351,7 @@
             </div>
 
 
-            </div>
+          </div>
         </div>
       </section>
     </div>

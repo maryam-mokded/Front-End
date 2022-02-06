@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-light-blue elevation-4" style="position: fixed !important;font-size: 18px;width: 257px;">
+<aside *ngIf="user" class="main-sidebar sidebar-light-blue elevation-4" style="position: fixed !important;font-size: 18px;width: 257px;">
   <!-- Brand Logo -->
   <a class="brand-link" style="margin-top: 15px;margin-left: 5px;">
     <img src="../../../assets/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="margin-left: 2px;background-color: white;">
@@ -12,7 +12,7 @@
 
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="info" style="margin-left:35px" >
-        <a  class="d-block" style="margin-left:40px;" >UserName</a>
+        <a  class="d-block" style="margin-left:10px;" >{{user.prenom}} {{user.nom}}</a>
       </div>
     </div>
 
@@ -49,7 +49,7 @@
           </a>
         </li>
 
-        
+
 
         <!-- Partie directions List lel Admin khw -->
         <li class="nav-item">

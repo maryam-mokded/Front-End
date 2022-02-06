@@ -2,90 +2,152 @@
 
   <div mat-dialog-title id="dialog-title">
     <div>
-      <h1>Update Employee </h1>
+      <h1>Update Employee <span style="color: red;">(* required)</span></h1>
     </div>
     <div><button id="IconClose" (click)="onClose()"><i class="fas fa-times"></i></button></div>
   </div>
 
-  <form class="needs-validation" novalidate>
+  <form [formGroup]="myForm" class="needs-validation" novalidate>
 
 
     <div class="form-row">
       <div class="col-md-6 mb-6">
-        <label>First Name</label>
-        <input type="text" class="form-control" placeholder="nom" [(ngModel)]="Employee.nom" name="name">
-       
+        <label>First Name<span style="color: red;">*</span></label>
+        <input type="text" class="form-control" placeholder="nom" formControlName="nom" [(ngModel)]="Employee.nom"
+          name="name">
+
+        <div *ngIf="name?.invalid && name?.touched" class="text-danger">
+          First Name is not validated !
+        </div>
+        <div *ngIf="name?.valid && name?.touched" class="text-success">
+          First Name Validated.
+        </div>
+
       </div>
       <div class="col-md-6 mb-6">
-        <label>Last Name</label>
-        <input type="text" class="form-control"  [(ngModel)]="Employee.prenom" name="prenom"
+        <label>Last Name<span style="color: red;">*</span></label>
+        <input type="text" class="form-control" [(ngModel)]="Employee.prenom" name="prenom" formControlName="prenom"
           placeholder="prénom">
-       
+
+        <div *ngIf="prenom?.invalid && prenom?.touched" class="text-danger">
+          Last Name is not validated !
+        </div>
+        <div *ngIf="prenom?.valid && prenom?.touched" class="text-success">
+          Last Name Validated.
+        </div>
+
       </div>
     </div>
-
-
 
     <div class="form-row">
       <div class="col-md-4 mb-6">
-        <label>Matricule</label>
-        <input type="text" class="form-control" placeholder="1111M" [(ngModel)]="Employee.matricule" name="matricule">
-       
-      </div> 
-      <div class="col-md-4 mb-6">
-        <label>CIN</label>
-        <input type="text" class="form-control" placeholder="11111111" [(ngModel)]="Employee.cin" name="cin">
-       
+        <label>Matricule<span style="color: red;">*</span></label>
+        <input type="text" class="form-control" placeholder="1111M" [(ngModel)]="Employee.matricule"
+          formControlName="matricule" name="matricule">
+
+        <div *ngIf="matricule?.invalid && matricule?.touched" class="text-danger">
+          matricule is not validated !
+        </div>
+        <div *ngIf="matricule?.valid && matricule?.touched" class="text-success">
+          matricule Validated.
+        </div>
       </div>
       <div class="col-md-4 mb-6">
-        <label>Tel</label>
-        <input type="text" class="form-control" [(ngModel)]="Employee.tel" name="tel"
+        <label>CIN<span style="color: red;">*</span></label>
+        <input type="text" class="form-control" placeholder="11111111" [(ngModel)]="Employee.cin" formControlName="cin"
+          name="cin">
+
+        <div *ngIf="cin?.invalid && cin?.touched" class="text-danger">
+          Cin is not validated !
+        </div>
+        <div *ngIf="cin?.valid && cin?.touched" class="text-success">
+          Cin Validated.
+        </div>
+      </div>
+      <div class="col-md-4 mb-6">
+        <label>Tel<span style="color: red;">*</span></label>
+        <input type="text" class="form-control" [(ngModel)]="Employee.tel" formControlName="tel" name="tel"
           placeholder="(+216) 25 369 369 ">
-       
+
+        <div *ngIf="tel?.invalid && tel?.touched" class="text-danger">
+          Phone Number is not validated !
+        </div>
+        <div *ngIf="tel?.valid && tel?.touched" class="text-success">
+          Phone Number Validated.
+        </div>
       </div>
     </div>
-
 
     <div class="form-row">
       <div class="col-md-7 mb-6">
-        <label>Email</label>
-        <input type="email" class="form-control" placeholder="example@gmail.com" [(ngModel)]="Employee.email" name="email">
-       
+        <label>Email<span style="color: red;">*</span></label>
+        <input type="email" class="form-control" placeholder="example@gmail.com" [(ngModel)]="Employee.email"
+          formControlName="email" name="email">
+
+        <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+          email is not validated !
+        </div>
+        <div *ngIf="email?.valid && email?.touched" class="text-success">
+          email Validated.
+        </div>
       </div>
       <div class="col-md-5 ">
-        <label>Date Embauche</label>
-        <input type="date" class="form-control" [(ngModel)]="Employee.dateEmbauche" name="dateEmbauche" placeholder="dateEmbauche">
+        <label>Date Embauche<span style="color: red;">*</span></label>
+        <input type="date" class="form-control" [(ngModel)]="Employee.dateEmbauche" name="dateEmbauche"
+          formControlName="dateEmbauche" placeholder="dateEmbauche">
+
+        <div *ngIf="dateEmbauche?.invalid && dateEmbauche?.touched" class="text-danger">
+          Date is not validated !
+        </div>
+        <div *ngIf="dateEmbauche?.valid && dateEmbauche?.touched" class="text-success">
+          Date Validated.
+        </div>
       </div>
     </div>
 
-
     <div class="form-row">
       <div class="col-md-7 mb-6">
-      
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Direction</label>
-      <select type="text" class="form-control" id="idDirection" name="idDirection" 
-              [(ngModel)]="idDirection">
-        <option *ngFor="let d of Direction" [value]="d.id_Direction">
-          {{d.nom_Direction}}
-        </option>
-      </select>
-   </div>
-</div>
-   <div class="col-md-5 mb-6">
-    <label>Profession</label>
-    <input type="text" class="form-control" [(ngModel)]="Employee.profession" name="profession" placeholder="profession">
-  </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Direction<span style="color: red;">*</span></label>
+          <select type="text" class="form-control" id="idDirection" [(ngModel)]="idDirection" name="idDirection"
+            formControlName="idDirection">
+            <option *ngFor="let d of Direction" [value]="d.id_Direction">
+              {{d.nom_Direction}}
+            </option>
+          </select>
+          <div *ngIf="direction?.invalid && direction?.touched" class="text-danger">
+            please choose the Direction !
+          </div>
+          <div *ngIf="direction?.valid && direction?.touched" class="text-success">
+            Direction Validated.
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-5 mb-6">
+        <label>Profession<span style="color: red;">*</span></label>
+        <input type="text" class="form-control" [(ngModel)]="Employee.profession" name="profession"
+          formControlName="profession" placeholder="profession">
+
+        <div *ngIf="profession?.invalid && profession?.touched" class="text-danger">
+          profession is not validated !
+        </div>
+        <div *ngIf="profession?.valid && profession?.touched" class="text-success">
+          profession Validated.
+        </div>
+      </div>
 
 
-  </div>
+    </div>
 
 
 
 
     <div id="btn">
       <button type="button" (click)="onClose()" id="btnClose" class="btn btn-danger">Annuler</button>
-      <button type="submit" (click)="MofidierEmployee()" class="btn btn-info">Update</button>
+      <button type="submit" [disabled]="myForm.invalid" (click)="MofidierEmployee()"
+        class="btn btn-info">Update</button>
     </div>
   </form>
 </div>
