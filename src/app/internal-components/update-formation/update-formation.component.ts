@@ -18,7 +18,7 @@ export class UpdateFormationComponent implements OnInit {
   formation: Formation = new Formation();
   myForm!: FormGroup;
 
-  idFormation!:number;
+  idFormation!: number;
   constructor(
     private dialogClose: MatDialog,
     private userServ: UserService,
@@ -39,6 +39,33 @@ export class UpdateFormationComponent implements OnInit {
       });
 
     this.GetEmployeeList();
+    this.ValidatedForm();
+  }
+
+  ValidatedForm() {
+    this.myForm = new FormGroup({
+      theme: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(100),
+      ]),
+      type: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(100),
+      ]),
+      idEmployee: new FormControl(null),
+    });
+  }
+
+  get Employee() {
+    return this.myForm.get('idEmployee');
+  }
+  get theme() {
+    return this.myForm.get('theme');
+  }
+  get type() {
+    return this.myForm.get('type');
   }
 
   GetEmployeeList() {
@@ -48,16 +75,21 @@ export class UpdateFormationComponent implements OnInit {
     });
   }
 
-  MofidierFormation(){
+  MofidierFormation() {
     // console.log(this.idEmployee);
     // console.log(this.formation);
     // console.log(this.formation.id_Formation);
-    
-    this.formationServ.modifierFormation(this.formation.id_Formation,this.idEmployee,this.formation).subscribe(() =>{
-      console.log("Formation Modifier avec succees !")
-      window.location.reload() 
-    })
 
+    this.formationServ
+      .modifierFormation(
+        this.formation.id_Formation,
+        this.idEmployee,
+        this.formation
+      )
+      .subscribe(() => {
+        console.log('Formation Modifier avec succees !');
+        window.location.reload();
+      });
 
     // this.formationServ.modifierFormation(this.formation.id_Formation,this.idEmployee,this.formation)
     //     .subscribe(f=>{
@@ -67,13 +99,9 @@ export class UpdateFormationComponent implements OnInit {
     //       console.log("Failed")
     //     }
     //   );
-  
   }
 
-
-  updateOffre(){
-
-    }
+  updateOffre() {}
 
   onClose() {
     this.dialogClose.closeAll();

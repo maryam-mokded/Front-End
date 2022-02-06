@@ -78,20 +78,21 @@
         <i class="far fa-bell"></i>
         <span *ngIf="nbNotif" class="badge badge-warning navbar-badge" style="border-radius: 13px;background-color: #fb6b8e;font-size: 12px;color: white;">{{nbNotif}}</span>
       </a>
-      
+
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <a class="dropdown-item dropdown-header" style="font-size: 15px;" >15 Notifications</a>
-      
+        <a *ngIf="nbNotif" class="dropdown-item dropdown-header" style="font-size: 15px;" >{{nbNotif}} Notification(s)</a>
+        <a *ngIf="!nbNotif" class="dropdown-item dropdown-header" style="font-size: 15px;" >{{nbNotif}} Notification(s)</a>
+
                   <div class="dropdown-divider"></div>
 
                   <a (click)="AfficherNotification(notification)" class="dropdown-item" *ngFor="let notification of NotificationList" style="font-size: 18px;">
-                    <i class="fas fa-file mr-2"></i> 
+                    <i class="fas fa-file mr-2"></i>
                     <span class="float-right text-muted text-sm"> {{notification.date | date :'longDate'}}</span>
                     {{notification.message | slice:0:20 }}...
                   </a>
-            
-     
-     
+
+
+
          <div class="dropdown-divider"></div>
         <a class="dropdown-item dropdown-footer" style="font-size: 15px;">See All Notifications</a>
       </div>
