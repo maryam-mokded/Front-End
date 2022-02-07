@@ -6,6 +6,8 @@ export class User{
   email!: string;
   adresse!: string;
   cin!: number;
+  username!:string;
+  password!:string;
   profession!:string;
   tel!: number;
   pilote!:number;
