@@ -24,11 +24,10 @@ export class NotificationService {
     return this.http.get<Notification[]>(url);
   }
 
-  
-  AjouterNotification(id:number){
+
+  AjouterNotification(id:number,message:string): Observable<Notification>{
     const url =`${this.UrlApi}/${id}`;
-    return this.http.post(url,httpOptions);
+    return this.http.post<Notification>(url,message);
   }
 
 }
-  

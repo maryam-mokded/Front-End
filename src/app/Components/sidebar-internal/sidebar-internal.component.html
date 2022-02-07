@@ -21,7 +21,7 @@
 
        <!-- Partie Dashboard lel Admin -->
         <li class="nav-item">
-          <a routerLink="/inter/dashboard" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
+          <a *ngIf="authService.isAdmin()" routerLink="/inter/dashboard" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
             <i style="font-size: 18px;margin-right: 16px;" class="fas fa-chart-line"></i>
             <p>
               Dashboard
@@ -41,7 +41,7 @@
 
         <!-- Partie Employees List lel Admin khw -->
         <li class="nav-item">
-          <a routerLink="/inter/employees-list" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
+          <a *ngIf="authService.isAdmin()" routerLink="/inter/employees-list" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
             <p>
               <i style="font-size: 18px; margin-right: 16px;" class="fa fa-users"></i>
               Employees List
@@ -53,10 +53,21 @@
 
         <!-- Partie directions List lel Admin khw -->
         <li class="nav-item">
-          <a routerLink="/inter/directions-list" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
+          <a *ngIf="authService.isChefService()" routerLink="/inter/directions-list" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
             <p>
               <i style="font-size: 18px;margin-right: 16px;" class="nav-icon fas fa-th"></i>
               Directions List
+            </p>
+          </a>
+        </li>
+
+
+         <!-- Partie directions List lel Admin khw -->
+         <li *ngIf="authService.isPilote()" class="nav-item">
+          <a routerLink="/inter/formations-list" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
+            <p>
+              <i style="font-size: 18px;margin-right: 16px;" class="fas fa-chalkboard-teacher"></i>
+              Formation List
             </p>
           </a>
         </li>

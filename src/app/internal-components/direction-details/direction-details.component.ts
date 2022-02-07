@@ -39,6 +39,8 @@ export class DirectionDetailsComponent implements OnInit {
 
   LenListFormation?:number;
 
+  notification!:Notification;
+
   constructor(
     private dialog: MatDialog,
     private router: ActivatedRoute,
@@ -77,7 +79,11 @@ export class DirectionDetailsComponent implements OnInit {
   }
 
   Notify(){
-    this.notificationServ.AjouterNotification(this.pilote.id_User).subscribe(()=>{
+    // this.notification.id_Notification=1
+    this.notification.message="Hello"
+    console.log(this.notification)
+    console.log(this.pilote.id_User)
+    this.notificationServ.AjouterNotification(this.pilote.id_User,"Hello").subscribe(()=>{
       this.showToast();
     });
   }
@@ -104,7 +110,7 @@ export class DirectionDetailsComponent implements OnInit {
           this.testNotify =true;
         }
     });
-  
+
   }
 
   DetailsFormation(formation: Formation) {
