@@ -5,5 +5,6 @@ export class Notification{
     message!: string;
     date!: Date;
     user!:User;
+    id_D!:number;
   }
   

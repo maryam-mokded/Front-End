@@ -13,13 +13,12 @@ import { MailsService } from 'src/app/Services/mails.service';
 @Component({
   selector: 'app-navbar-internal',
   templateUrl: './navbar-internal.component.html',
-  styleUrls: ['./navbar-internal.component.css']
+  styleUrls: ['./navbar-internal.component.css'],
 })
 export class NavbarInternalComponent implements OnInit {
-
   NotificationList!: Notification[];
-  nbNotif!:number;
-  user!:User;
+  nbNotif!: number;
+  user!: User;
 
   nbMsg!: number;
   mails?: Mail[];
@@ -27,17 +26,16 @@ export class NavbarInternalComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private mailServ: MailsService,
-    private notificationServ : NotificationService,
-    private userServ:UserService,
-    public authService: AuthService,
-  ) { }
+    private notificationServ: NotificationService,
+    private userServ: UserService,
+    public authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.DetailsUser();
-    this.GetNotificationList();
-    this.GetListMails();
+    this.authService.loadToken();
+    this.GetUserConnectedDetails();
+    this.GetListMails();  
   }
-
 
   GetListMails() {
     this.mailServ.ListeMail().subscribe((m) => {
@@ -46,31 +44,30 @@ export class NavbarInternalComponent implements OnInit {
     });
   }
 
-  DetailsUser(){
-    //id de l'utilisateur connecter
-    this.userServ.ConsulterEmployee(6).subscribe((u) => {
-      this.user =u;
-      console.log(this.user);
-    });
-  }
-
-  onLogout(){
+  onLogout() {
     this.authService.logout();
-
   }
 
-  GetNotificationList() {
-    this.notificationServ.ListeNotification(6).subscribe((ListNotification) => {
-        this.NotificationList = ListNotification;
-        this.nbNotif = ListNotification.length;
-      });
-    }
+  GetUserConnectedDetails() {
+    this.userServ
+      .getUserConnectedDetails(this.authService.loggedUser)
+      .subscribe((p) => {
+        this.user = p;
+        this.notificationServ
+        .ListeNotification(this.user.id_User)
+        .subscribe((ListNotification) => {
+          this.NotificationList = ListNotification;
+          this.nbNotif = ListNotification.length;
+        });
+          });
+  }
 
-    AfficherNotification(notification:Notification){
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.disableClose = true;
-      dialogConfig.autoFocus = true;
-      localStorage.setItem('Notification', JSON.stringify(notification));
-      this.dialog.open(NotificationsComponent, dialogConfig);
-    }
+  
+  AfficherNotification(notification: Notification) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    localStorage.setItem('Notification', JSON.stringify(notification));
+    this.dialog.open(NotificationsComponent, dialogConfig);
+  }
 }

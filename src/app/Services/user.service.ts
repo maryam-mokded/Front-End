@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../Models/user';
+import { AuthService } from './auth.service';
+
 
 const httpOptions = {
   headers: new HttpHeaders( {'Content-Type': 'application/json'} )
@@ -16,11 +18,15 @@ export class UserService {
   UrlApi : string = 'http://localhost:3800/users';
 
   constructor(
-    private http : HttpClient
+    private http : HttpClient,
+    private authService : AuthService,
   ) { }
 
   ListeUser(): Observable<User[]>{
-    return this.http.get<User[]>(this.UrlApi);
+    let jwt = this.authService.getToken();
+    jwt ="Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
+    return this.http.get<User[]>(this.UrlApi,{headers:httpHeaders});
   }
 
   ConsulterEmployee(id:number):Observable<User>{
@@ -32,6 +38,12 @@ export class UserService {
     const url = `${this.UrlApi}/pilote/${id}`
     return this.http.get<User>(url);
   }
+
+  getUserConnectedDetails(username?:string):Observable<User>{
+    const url = `${this.UrlApi}/username/${username}`
+    return this.http.get<User>(url);
+  }
+
 
   ListeUserDirection(id:number): Observable<User[]>{
     const url = `${this.UrlApi}/direction/${id}`
@@ -45,9 +57,11 @@ export class UserService {
     return this.http.post<User>(url,user,httpOptions);
   }
 
-
   modifierUser(idD:number,idU:number,u:User):Observable<User>{
     const url =`${this.UrlApi}/${idD}/${idU}`;
     return this.http.put<User>(url,u);
   }
+
+
+
 }

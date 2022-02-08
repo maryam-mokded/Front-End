@@ -25,9 +25,20 @@ export class NotificationService {
   }
 
 
-  AjouterNotification(id:number,message:string): Observable<Notification>{
-    const url =`${this.UrlApi}/${id}`;
-    return this.http.post<Notification>(url,message);
+  AjouterNotification(id:number): Observable<Notification>{
+    const url =`${this.UrlApi}/envoyerP/${id}`;
+    return this.http.post<Notification>(url,httpOptions);
   }
+
+  AjouterNotificationSF(id:number): Observable<Notification>{    
+    const url =`${this.UrlApi}/${id}`;
+    return this.http.post<Notification>(url,httpOptions);
+  }
+
+  supprimerNotification(id:number){
+    const url =`${this.UrlApi}/${id}`;
+    return this.http.delete(url,httpOptions);
+  }
+
 
 }

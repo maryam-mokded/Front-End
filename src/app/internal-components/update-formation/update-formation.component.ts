@@ -5,6 +5,7 @@ import { Formation } from 'src/app/Models/formation';
 import { UserService } from 'src/app/Services/user.service';
 import { FormationService } from 'src/app/Services/formation.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-update-formation',
@@ -21,11 +22,14 @@ export class UpdateFormationComponent implements OnInit {
   idFormation!: number;
   constructor(
     private dialogClose: MatDialog,
+    public authService: AuthService,
     private userServ: UserService,
     private formationServ: FormationService
   ) {}
 
   ngOnInit(): void {
+
+    this.authService.loadToken();
     this.formationServ
       .ConsulterFormation(
         JSON.parse(localStorage.getItem('Formation') || '[]') || []

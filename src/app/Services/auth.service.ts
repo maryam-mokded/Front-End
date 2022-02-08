@@ -8,7 +8,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root',
 })
 export class AuthService {
-  // apiURL: string = 'http://localhost:8081/users';
   apiURL: string = 'http://localhost:3800';
 
   public loggedUser?: string;
@@ -18,7 +17,9 @@ export class AuthService {
   token?: any;
   private helper = new JwtHelperService();
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(
+    private router: Router,
+    private http: HttpClient ) {}
 
   login(user: User) {
     return this.http.post<User>(this.apiURL + '/login', user, {
@@ -37,8 +38,8 @@ export class AuthService {
   //decoder le token
   decodeJWT() {
     if (this.token == undefined) {
-      this.router.navigate(['/']);
-      //this.router.navigate(['/login']);
+     // this.router.navigate(['/']);
+      this.router.navigate(['/login']);
     }
 
     const decodedToken = this.helper.decodeToken(this.token);
@@ -46,7 +47,7 @@ export class AuthService {
     this.loggedUser = decodedToken.sub;
   }
 
-//Recharger le token
+  //Recharger le token
   loadToken() {
     this.token = localStorage.getItem('jwt');
     this.decodeJWT();
@@ -61,7 +62,8 @@ export class AuthService {
     this.roles = undefined;
     this.token = undefined;
     this.isloggedIn = false;
-    localStorage.removeItem('jwt');
+    localStorage.setItem('jwt',"");          
+    localStorage.setItem('UserConnected', "");
     this.router.navigate(['/login']);
   }
 
@@ -70,10 +72,10 @@ export class AuthService {
     return this.roles.indexOf('ADMIN') >= 0;
   }
 
-  isUser(): Boolean {
-    if (!this.roles) return false;
-    return this.roles.indexOf('USER') >= 0;
-  }
+  // isUser(): Boolean {
+  //   if (!this.roles) return false;
+  //   return this.roles.indexOf('USER') >= 0;
+  // }
 
   isPilote(): Boolean {
     if (!this.roles) return false;
@@ -86,6 +88,7 @@ export class AuthService {
   }
 
   isTokenExpired(): Boolean {
+    // this.isloggedIn = false
     return this.helper.isTokenExpired(this.token);
   }
 
@@ -99,7 +102,7 @@ export class AuthService {
   getUserRoles(login: string) {}
 
   getRole(): any {
-    if (this.isUser()) this.role = 'USER';
+    // if (this.isUser()) this.role = 'USER';
     if (this.isAdmin()) this.role = 'ADMIN';
     if (this.isPilote()) this.role = 'PILOTE';
     if (this.isChefService()) this.role = 'CHEF_SERVICE';

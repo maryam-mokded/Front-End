@@ -79,11 +79,7 @@ export class DirectionDetailsComponent implements OnInit {
   }
 
   Notify(){
-    // this.notification.id_Notification=1
-    this.notification.message="Hello"
-    console.log(this.notification)
-    console.log(this.pilote.id_User)
-    this.notificationServ.AjouterNotification(this.pilote.id_User,"Hello").subscribe(()=>{
+    this.notificationServ.AjouterNotification(this.pilote.id_User).subscribe(()=>{
       this.showToast();
     });
   }

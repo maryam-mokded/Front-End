@@ -8,6 +8,10 @@ import { FormationService } from 'src/app/Services/formation.service';
 import { Formation } from 'src/app/Models/formation';
 import { FormationDetailsComponent } from '../formation-details/formation-details.component';
 import { UpdateFormationComponent } from '../update-formation/update-formation.component';
+import { NotificationService } from 'src/app/Services/notification.service';
+import { AuthService } from 'src/app/Services/auth.service';
+import { User } from 'src/app/Models/user';
+import { UserService } from 'src/app/Services/user.service';
 
 
 @Component({
@@ -19,18 +23,24 @@ export class FormationListComponent implements OnInit {
 
   historique:boolean = false;
   HistoriqueList?:Historique[];
-
+  user!:User;
   idEmployee!:number;
   
   FormationList!: Formation[];
 
   constructor(
     private dialog: MatDialog,
+    public authService: AuthService,
     private historiqueServ : HistoriqueService,
     private formationServ: FormationService,
+    private userServ: UserService,
+    private notificationServ : NotificationService,
   ) { }
 
   ngOnInit(): void {
+    this.authService.loadToken();
+    this.user =JSON.parse(localStorage.getItem('UserConnected') || '[]') || [];
+    console.log(this.user)
     this.GetFormationList();
   }
 
@@ -54,13 +64,14 @@ export class FormationListComponent implements OnInit {
   EnvoyerFormation(formation:Formation){
     this.formationServ.EnvoyerFormation(formation.id_Formation).subscribe(()=>{
       console.log("Formation Envoyer !")
+      this.notificationServ.AjouterNotificationSF(this.user.direction?.id_Direction).subscribe(()=>{
+      });
       window.location.reload();
     });
   }
 
   GetFormationList() {
-    //id direction de pilote connecter
-    this.formationServ.ListeFormationsDirection(1).subscribe((ListEmployee) => {
+    this.formationServ.ListeFormationsDirection(this.user.direction?.id_Direction).subscribe((ListEmployee) => {
         this.FormationList = ListEmployee;
         console.log(this.FormationList)
       });
@@ -77,8 +88,9 @@ export class FormationListComponent implements OnInit {
 
   AfficherHistorique(){
       this.historique = true;
+      this.user =JSON.parse(localStorage.getItem('UserConnected') || '[]') || [];
     //id direction de pilote connecter
-    this.historiqueServ.ListeHistorique(1).subscribe((ListH) => {
+    this.historiqueServ.ListeHistorique(this.user.direction?.id_Direction).subscribe((ListH) => {
       this.HistoriqueList = ListH;
       console.log(this.HistoriqueList);
     });
