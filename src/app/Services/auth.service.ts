@@ -62,7 +62,8 @@ export class AuthService {
     this.roles = undefined;
     this.token = undefined;
     this.isloggedIn = false;
-    localStorage.setItem('jwt',"");          
+    localStorage.setItem('jwt',"");
+    localStorage.removeItem('jwt');
     localStorage.setItem('UserConnected', "");
     this.router.navigate(['/login']);
   }
