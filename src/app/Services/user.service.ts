@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../Models/user';
 import { AuthService } from './auth.service';
+import { NumberCardComponent } from '@swimlane/ngx-charts';
 
 
 const httpOptions = {
@@ -30,38 +31,60 @@ export class UserService {
   }
 
   ConsulterEmployee(id:number):Observable<User>{
+    let jwt = this.authService.getToken();
+    jwt ="Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url = `${this.UrlApi}/${id}`
-    return this.http.get<User>(url);
+    return this.http.get<User>(url,{headers:httpHeaders});
   }
 
   getPiloteDetails(id:number):Observable<User>{
+    let jwt = this.authService.getToken();
+    jwt ="Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url = `${this.UrlApi}/pilote/${id}`
-    return this.http.get<User>(url);
+    return this.http.get<User>(url,{headers:httpHeaders});
   }
 
   getUserConnectedDetails(username?:string):Observable<User>{
+    let jwt = this.authService.getToken();
+    jwt ="Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url = `${this.UrlApi}/username/${username}`
-    return this.http.get<User>(url);
+    return this.http.get<User>(url,{headers:httpHeaders});
   }
 
 
   ListeUserDirection(id:number): Observable<User[]>{
+    let jwt = this.authService.getToken();
+    jwt ="Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url = `${this.UrlApi}/direction/${id}`
-    return this.http.get<User[]>(url);
+    return this.http.get<User[]>(url,{headers:httpHeaders});
   }
 
-
-
   AjouterEmployee(id:number,user:User): Observable<User>{
+    let jwt = this.authService.getToken();
+    jwt ="Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url =`${this.UrlApi}/${id}`;
-    return this.http.post<User>(url,user,httpOptions);
+    return this.http.post<User>(url,user,{headers:httpHeaders});
   }
 
   modifierUser(idD:number,idU:number,u:User):Observable<User>{
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url =`${this.UrlApi}/${idD}/${idU}`;
-    return this.http.put<User>(url,u);
+    return this.http.put<User>(url,u,{headers:httpHeaders});
   }
 
-
+  modifierUserProfil(id:number,u:User):Observable<User>{
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
+    const url =`${this.UrlApi}/${id}`;
+    return this.http.put<User>(url,u,httpOptions);
+  }
 
 }

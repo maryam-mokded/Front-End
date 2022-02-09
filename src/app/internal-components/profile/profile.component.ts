@@ -17,21 +17,39 @@ export class ProfileComponent implements OnInit {
   user!: User;
 
   constructor(
-    public authService: AuthService, 
-    private userServ: UserService) {}
+    public authService: AuthService,
+    private userServ: UserService
+  ) {}
 
   ngOnInit(): void {
-    // this.DetailsUser();
+    this.authService.loadToken();
+    // this.user =JSON.parse(localStorage.getItem('UserConnected') || '[]') || [];
     this.GetUserConnectedDetails();
+    console.log(this.user)
     this.ValidatedForm();
   }
+
 
   GetUserConnectedDetails() {
     this.userServ
       .getUserConnectedDetails(this.authService.loggedUser)
       .subscribe((p) => {
         this.user = p;
-      });
+     });
+  }
+
+  modifierProfil(user: User) {
+    if (this.test == true) {
+      this.test = false;
+      this.EtatProfil = 'Editer';
+    }
+    this.userServ
+    .modifierUserProfil(this.user.id_User,this.user)
+    .subscribe(() => {
+      console.log('User Modifier avec succees !');
+      window.location.reload();
+    });
+
   }
 
   ValidatedForm() {
@@ -110,27 +128,4 @@ export class ProfileComponent implements OnInit {
     return this.myForm.get('tel');
   }
 
-  DetailsUser() {
-    this.user = JSON.parse(localStorage.getItem('UserConnected') || '[]') || [];
-    console.log(this.user);
-    //id de l'utilisateur connecter
-    // this.userServ.ConsulterEmployee(2).subscribe((u) => {
-    //   this.user =u;
-    //   console.log(this.user);
-    // });
-  }
-
-  modifierProfil(user: User) {
-    if (this.test == true) {
-      this.test = false;
-      this.EtatProfil = 'Editer';
-    } else {
-      this.userServ
-        .modifierUser(user.direction?.id_Direction, user.id_User, user)
-        .subscribe((u) => {
-          console.log('User Ajouter avec succees !');
-          window.location.reload();
-        });
-    }
-  }
 }

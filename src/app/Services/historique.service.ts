@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Historique } from '../Models/historique';
+import { AuthService } from './auth.service';
 
 
 const httpOptions = {
@@ -16,32 +17,42 @@ export class HistoriqueService {
   UrlApi : string = 'http://localhost:3800/historique';
 
   constructor(
-    private http : HttpClient
+    private http : HttpClient,
+    private authService : AuthService,
   ) { }
 
   ListeHistorique(id:number): Observable<Historique[]>{
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url = `${this.UrlApi}/direction/${id}`
-    return this.http.get<Historique[]>(url);
+    return this.http.get<Historique[]>(url,{headers:httpHeaders});
   }
 
   ConsulterHistorique(id:number):Observable<Historique>{
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url = `${this.UrlApi}/${id}`
-    return this.http.get<Historique>(url);
+    return this.http.get<Historique>(url,{headers:httpHeaders});
   }
 
 
   AcceptFormation(id:number){
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url =`${this.UrlApi}/Accept/${id}`;
-    return this.http.post(url,httpOptions);
+    return this.http.post(url,httpOptions,{headers:httpHeaders});
   }
 
   RefuseFormation(id:number){
+    let jwt = this.authService.getToken();
+    jwt = "Bearer "+jwt;
+    let httpHeaders = new HttpHeaders({"Authorization":jwt})
     const url =`${this.UrlApi}/Refuse/${id}`;
-    return this.http.post(url,httpOptions);
+    return this.http.post(url,httpOptions,{headers:httpHeaders});
   }
-
-
-
 
 }
 

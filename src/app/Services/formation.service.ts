@@ -77,5 +77,5 @@ export class FormationService {
     return this.http.put<Formation>(url,{headers:httpHeaders});
   }
 
-} 
+}
 
