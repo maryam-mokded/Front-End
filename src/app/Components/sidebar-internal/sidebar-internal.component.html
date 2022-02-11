@@ -72,9 +72,9 @@
           </a>
         </li>
 
-        <li class="nav-header" style="font-size: 15px;color: gray;">More</li>
+        <li *ngIf="authService.isAdmin()" class="nav-header" style="font-size: 15px;color: gray;">More</li>
         <!-- Partie Mailbox lel Les Admin khw -->
-        <li class="nav-item">
+        <li *ngIf="authService.isAdmin()" class="nav-item">
           <a routerLink="/inter/mail-box" routerLinkActive="active" class="nav-link" style="font-size: 18px;">
             <p>
               <i style="font-size: 18px;margin-right: 16px;" class="nav-icon far fa-envelope"></i>
