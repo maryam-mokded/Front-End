@@ -5,7 +5,7 @@
         <mat-form-field id="formSearch" appearance="fill" aria-autocomplete="off" (keyup)="filterData($event)">
           <div id="search">
             <div><input id="inputSearch" matInput placeholder="Employee Search" /></div>
-            <div><span class='material-icons'>search</span></div>
+            <div><span class='material-icons'><i class="fas fa-search"></i></span></div>
           </div>
         </mat-form-field>
       </div>
@@ -59,9 +59,9 @@
                   <td id="alignement" mat-cell *matCellDef="let element">
                     <a  (click)="UpdateEmployee(element)" class="update"
                       data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
-                        title="Update">&#xE254;</i></a>
+                        title="Update"><i class="fas fa-pen"></i></i></a>
                      <a (click)="DetailsEmployee(element)" class="view" data-toggle="modal"><i class="material-icons"
-                        data-toggle="tooltip" title="View">&#xE417;</i></a>
+                        data-toggle="tooltip" title="View"><i class="fas fa-eye"></i></i></a>
                   </td>
                 </ng-container>
 
