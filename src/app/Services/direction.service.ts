@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class DirectionService {
 
-  UrlApi : string = 'http://localhost:3800/directions';
+  UrlApi : string = 'https://backendperfectionnement.herokuapp.com/directions';
 
   constructor(
     private http : HttpClient,

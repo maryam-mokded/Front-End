@@ -4,7 +4,7 @@
 <div class="btn">
   <div style=" margin-left: 330px;">
     <button *ngIf="authService.isChefService()" routerLink="/inter/directions-details/{{notification.id_D}}" (click)="closeDetails()" class="btn btn-info " >Check it</button>
-    <button *ngIf="authService.isPilote()" (click)="AjouterFormation()" class="btn btn-info " >Add</button>
+    <button *ngIf="authService.isPilote()" (click)="AjouterFormation()" class="btn btn-info " >Check it</button>
   </div>
   <div  style="margin-left: 120px !important;">
     <button (click)="closeDetails()" class="btn btn-danger" style="margin-left: 16px;">Close</button>

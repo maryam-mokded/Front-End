@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { HttpClient, HttpClientModule , HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Formation } from '../Models/formation';
 import { AuthService } from './auth.service';
@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class FormationService {
 
-  UrlApi : string = 'http://localhost:3800/formations';
+  UrlApi : string = 'https://backendperfectionnement.herokuapp.com/formations';
 
   constructor(
     private http : HttpClient,

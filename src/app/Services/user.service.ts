@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class UserService {
 
-  UrlApi : string = 'http://localhost:3800/users';
+  UrlApi : string = 'https://backendperfectionnement.herokuapp.com/users';
 
   constructor(
     private http : HttpClient,

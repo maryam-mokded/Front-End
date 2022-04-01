@@ -8,7 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root',
 })
 export class AuthService {
-  apiURL: string = 'http://localhost:3800';
+  apiURL: string = 'https://backendperfectionnement.herokuapp.com';
 
   public loggedUser?: string;
   public isloggedIn: Boolean = false;

@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class NotificationService {
 
-  UrlApi : string = 'http://localhost:3800/notifications';
+  UrlApi : string = 'https://backendperfectionnement.herokuapp.com/notifications';
 
   constructor(
     private http : HttpClient,

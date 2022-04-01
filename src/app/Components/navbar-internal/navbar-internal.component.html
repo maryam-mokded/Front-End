@@ -60,9 +60,15 @@
                   <div class="dropdown-divider"></div>
 
                   <a (click)="AfficherNotification(notification)" class="dropdown-item" *ngFor="let notification of NotificationList" style="font-size: 18px;">
-                    <i class="fas fa-file mr-2"></i>
+
                     <span class="float-right text-muted text-sm"> {{notification.date | date :'longDate'}}</span>
-                    {{notification.message | slice:0:20 }}...
+                    
+                    <h3 class="dropdown-item-title" style="margin-bottom: 0px;">
+                        Chef service Formation
+                        <span class="float-right text-sm text-danger"></span>
+                      </h3>
+                      <p style="font-size: 13px;"> {{notification.message | slice:0:20 }}...</p>
+
                   </a>
 
 

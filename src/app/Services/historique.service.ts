@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class HistoriqueService {
 
-  UrlApi : string = 'http://localhost:3800/historique';
+  UrlApi : string = 'https://backendperfectionnement.herokuapp.com/historique';
 
   constructor(
     private http : HttpClient,

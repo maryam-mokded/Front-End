@@ -14,7 +14,7 @@ const httpOptions = {
 
 export class MailsService {
 
-  UrlApi : string = 'http://localhost:3800/contacts';
+  UrlApi : string = 'https://backendperfectionnement.herokuapp.com/contacts';
 
   constructor(
     private http : HttpClient,
